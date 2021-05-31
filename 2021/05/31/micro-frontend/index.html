@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="微前端," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="WEB前端开发,前端开发博客专注于前端开发,分享前端开发资源和前端开发技术资讯等。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="友谊同学">
-<meta property="og:url" content="http://youyi.jingia.com/tags/prerender-spa-plugin/index.html">
+<meta name="description" content="一、基本使用 主应用 qiankun 注册  子应用暴露 bootstrap, mount, unmount 三个方法，并在打包结果配置为 libary: umd   二、子页面切换时缓存页面三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router四、主子应用通信， 观察者模式，onGlobalStateChange redux vuex(项目 Vue 前提，耦合严重的拆分">
+<meta name="keywords" content="微前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="qiankun微前端架构注意点">
+<meta property="og:url" content="http://youyi.jingia.com/2021/05/31/micro-frontend/index.html">
 <meta property="og:site_name" content="友谊同学">
-<meta property="og:description" content="WEB前端开发,前端开发博客专注于前端开发,分享前端开发资源和前端开发技术资讯等。">
+<meta property="og:description" content="一、基本使用 主应用 qiankun 注册  子应用暴露 bootstrap, mount, unmount 三个方法，并在打包结果配置为 libary: umd   二、子页面切换时缓存页面三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router四、主子应用通信， 观察者模式，onGlobalStateChange redux vuex(项目 Vue 前提，耦合严重的拆分">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-05-31T14:10:31.871Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="友谊同学">
-<meta name="twitter:description" content="WEB前端开发,前端开发博客专注于前端开发,分享前端开发资源和前端开发技术资讯等。">
+<meta name="twitter:title" content="qiankun微前端架构注意点">
+<meta name="twitter:description" content="一、基本使用 主应用 qiankun 注册  子应用暴露 bootstrap, mount, unmount 三个方法，并在打包结果配置为 libary: umd   二、子页面切换时缓存页面三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router四、主子应用通信， 观察者模式，onGlobalStateChange redux vuex(项目 Vue 前提，耦合严重的拆分">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://youyi.jingia.com/tags/prerender-spa-plugin/"/>
+  <link rel="canonical" href="http://youyi.jingia.com/2021/05/31/micro-frontend/"/>
 
 
 
 
 
-  <title>标签: prerender-spa-plugin | 友谊同学</title>
+  <title>qiankun微前端架构注意点 | 友谊同学</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -217,54 +219,161 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>prerender-spa-plugin<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://youyi.jingia.com/2021/05/31/micro-frontend/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="老高">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="友谊同学">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/01/03/vue-optimize/" itemprop="url">
-              
-                <span itemprop="name">vue多页面优化之seo和路由懒加载</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">qiankun微前端架构注意点</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-03T16:01:41+08:00"
-              content="2018-01-03" >
-          01-03
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-31T20:35:06+08:00">
+                2021-05-31
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="一、基本使用"><a href="#一、基本使用" class="headerlink" title="一、基本使用"></a>一、基本使用</h5><ol>
+<li><p>主应用 qiankun 注册</p>
+</li>
+<li><p>子应用暴露 bootstrap, mount, unmount 三个方法，并在打包结果配置为 libary: umd</p>
+</li>
+</ol>
+<h5 id="二、子页面切换时缓存页面"><a href="#二、子页面切换时缓存页面" class="headerlink" title="二、子页面切换时缓存页面"></a>二、子页面切换时缓存页面</h5><h5 id="三、子应用为单页面应用并使用了前端-router，此时缓存切换前端-router"><a href="#三、子应用为单页面应用并使用了前端-router，此时缓存切换前端-router" class="headerlink" title="三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router"></a>三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router</h5><h5 id="四、主子应用通信，"><a href="#四、主子应用通信，" class="headerlink" title="四、主子应用通信，"></a>四、主子应用通信，</h5><ol>
+<li>观察者模式，onGlobalStateChange</li>
+<li>redux</li>
+<li>vuex(项目 Vue 前提，耦合严重的拆分应用，用 props 传递 store，Vue.observable 数据响应)</li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/微前端/" rel="tag"># 微前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/05/31/module-package/" rel="next" title="单页面应用分模块打包">
+                <i class="fa fa-chevron-left"></i> 单页面应用分模块打包
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/05/31/frontend-use/" rel="prev" title="前端开发环境搭建">
+                前端开发环境搭建 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -272,6 +381,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -292,8 +405,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -344,6 +466,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、基本使用"><span class="nav-number">1.</span> <span class="nav-text">一、基本使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二、子页面切换时缓存页面"><span class="nav-number">2.</span> <span class="nav-text">二、子页面切换时缓存页面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三、子应用为单页面应用并使用了前端-router，此时缓存切换前端-router"><span class="nav-number">3.</span> <span class="nav-text">三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#四、主子应用通信，"><span class="nav-number">4.</span> <span class="nav-text">四、主子应用通信，</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -477,6 +615,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

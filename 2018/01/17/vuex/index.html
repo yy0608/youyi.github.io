@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如vuex在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在vue中使用vuex的写法，记一个笔记。 1.创建目录 12345vuex  - index.js  - state.js  - mutations.js  - actions.js  2.index.js。此处Vue.use(Vuex)，不是在main.js里的ne">
+<meta name="description" content="记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如 vuex 在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在 vue 中使用 vuex 的写法，记一个笔记。 1.创建目录  12345vuex  - index.js  - state.js  - mutations.js  - actions.js  2.index.js。此处 Vue.use(Vuex)，不是在 ma">
 <meta name="keywords" content="vuex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vuex在vue中的使用">
 <meta property="og:url" content="http://youyi.jingia.com/2018/01/17/vuex/index.html">
 <meta property="og:site_name" content="友谊同学">
-<meta property="og:description" content="记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如vuex在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在vue中使用vuex的写法，记一个笔记。 1.创建目录 12345vuex  - index.js  - state.js  - mutations.js  - actions.js  2.index.js。此处Vue.use(Vuex)，不是在main.js里的ne">
+<meta property="og:description" content="记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如 vuex 在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在 vue 中使用 vuex 的写法，记一个笔记。 1.创建目录  12345vuex  - index.js  - state.js  - mutations.js  - actions.js  2.index.js。此处 Vue.use(Vuex)，不是在 ma">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-05-31T12:26:07.036Z">
+<meta property="og:updated_time" content="2021-05-31T14:12:46.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vuex在vue中的使用">
-<meta name="twitter:description" content="记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如vuex在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在vue中使用vuex的写法，记一个笔记。 1.创建目录 12345vuex  - index.js  - state.js  - mutations.js  - actions.js  2.index.js。此处Vue.use(Vuex)，不是在main.js里的ne">
+<meta name="twitter:description" content="记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如 vuex 在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在 vue 中使用 vuex 的写法，记一个笔记。 1.创建目录  12345vuex  - index.js  - state.js  - mutations.js  - actions.js  2.index.js。此处 Vue.use(Vuex)，不是在 ma">
 
 
 
@@ -300,28 +300,33 @@
       
 
       
-        <h6 id="记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如vuex在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在vue中使用vuex的写法，记一个笔记。"><a href="#记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如vuex在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在vue中使用vuex的写法，记一个笔记。" class="headerlink" title="记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如vuex在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在vue中使用vuex的写法，记一个笔记。"></a>记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如vuex在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在vue中使用vuex的写法，记一个笔记。</h6><ul>
-<li><p>1.创建目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vuex</span><br><span class="line">  - index.js</span><br><span class="line">  - state.js</span><br><span class="line">  - mutations.js</span><br><span class="line">  - actions.js</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2.index.js。此处Vue.use(Vuex)，不是在main.js里的new Vue传参（和router不同）。最后的方法是new Vuex.Store()，不是new Vuex()</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Vuex from &apos;vuex&apos;</span><br><span class="line"></span><br><span class="line">import state from &apos;./state.js&apos;</span><br><span class="line">import mutations from &apos;./mutations.js&apos;</span><br><span class="line">import actions from &apos;./actions.js&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">export default new Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  mutations,</span><br><span class="line">  actions</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>3.state.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const state = &#123;</span><br><span class="line">  number: 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default state</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.mutations.js。此处的参数是state和传入的value，如果多个值请使用对象，此处只能接收两个参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const mutations = &#123;</span><br><span class="line">  test (state, number) &#123;</span><br><span class="line">    state.number = state.number + 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default mutations</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>5.actions.js。此处的参数是包含commit和state的对象，后面可以传第二个参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const actions = &#123;</span><br><span class="line">  test (&#123; commit, state &#125;, value) &#123;</span><br><span class="line">    commit(&apos;test&apos;, 1)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default actions</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>6.在根组件中添加srore，一般是在App.vue文件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import store from &apos;@/vuex&apos;</span><br><span class="line">import &#123; mapState, mapActions &#125; from &apos;vuex&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;App&apos;,</span><br><span class="line">  computed: mapState([</span><br><span class="line">    &apos;number&apos;</span><br><span class="line">  ]),</span><br><span class="line">  methods: mapActions([</span><br><span class="line">    &apos;test&apos;</span><br><span class="line">  ]),</span><br><span class="line">  store</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>7.以上基本就完成了代码的使用，介绍mapState和mapActions的使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// mapState使用一</span><br><span class="line">computed: mapState([</span><br><span class="line">  &apos;number&apos;</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">// mapState使用二</span><br><span class="line">computed: mapState(&#123;</span><br><span class="line">  &apos;number&apos;: state =&gt; state.number</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// mapActions使用一</span><br><span class="line">methods: mapActions([</span><br><span class="line">  &apos;test&apos;</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">// mapActions使用二，使用dispatch，commit类似</span><br><span class="line">this.$store.dispatch(&apos;test&apos;, value)</span><br><span class="line">this.$store.commit(&apos;test&apos;, value)</span><br><span class="line"></span><br><span class="line">// 如果computed里除了mapState之外还有其他计算值，使用结构，记住computed里需要的是对象</span><br><span class="line">computed: &#123;</span><br><span class="line">  ...mapState([</span><br><span class="line">    &apos;number&apos;</span><br><span class="line">  ]),</span><br><span class="line">  a () &#123;</span><br><span class="line">    return 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+        <h6 id="记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如-vuex-在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在-vue-中使用-vuex-的写法，记一个笔记。"><a href="#记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如-vuex-在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在-vue-中使用-vuex-的写法，记一个笔记。" class="headerlink" title="记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如 vuex 在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在 vue 中使用 vuex 的写法，记一个笔记。"></a>记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如 vuex 在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在 vue 中使用 vuex 的写法，记一个笔记。</h6><ul>
+<li>1.创建目录</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vuex</span><br><span class="line">  - index.js</span><br><span class="line">  - state.js</span><br><span class="line">  - mutations.js</span><br><span class="line">  - actions.js</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.index.js。此处 Vue.use(Vuex)，不是在 main.js 里的 new Vue 传参（和 router 不同）。最后的方法是 new Vuex.Store()，不是 new Vuex()</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Vuex from &apos;vuex&apos;</span><br><span class="line"></span><br><span class="line">import state from &apos;./state.js&apos;</span><br><span class="line">import mutations from &apos;./mutations.js&apos;</span><br><span class="line">import actions from &apos;./actions.js&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">export default new Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  mutations,</span><br><span class="line">  actions</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.state.js</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const state = &#123;</span><br><span class="line">  number: 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default state</span><br></pre></td></tr></table></figure>
+<ul>
+<li>4.mutations.js。此处的参数是 state 和传入的 value，如果多个值请使用对象，此处只能接收两个参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const mutations = &#123;</span><br><span class="line">  test (state, number) &#123;</span><br><span class="line">    state.number = state.number + 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default mutations</span><br></pre></td></tr></table></figure>
+<ul>
+<li>5.actions.js。此处的参数是包含 commit 和 state 的对象，后面可以传第二个参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const actions = &#123;</span><br><span class="line">  test (&#123; commit, state &#125;, value) &#123;</span><br><span class="line">    commit(&apos;test&apos;, 1)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default actions</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>6.项目入口配置 store。</p>
+</li>
+<li><p>7.以上基本就完成了代码的使用，介绍 mapState 和 mapActions 的使用</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// mapState使用一</span><br><span class="line">computed: mapState([</span><br><span class="line">  &apos;number&apos;</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">// mapState使用二</span><br><span class="line">computed: mapState(&#123;</span><br><span class="line">  &apos;number&apos;: state =&gt; state.number</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// mapActions使用一</span><br><span class="line">methods: mapActions([</span><br><span class="line">  &apos;test&apos;</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">// mapActions使用二，使用dispatch，commit类似</span><br><span class="line">this.$store.dispatch(&apos;test&apos;, value)</span><br><span class="line">this.$store.commit(&apos;test&apos;, value)</span><br><span class="line"></span><br><span class="line">// 如果computed里除了mapState之外还有其他计算值，使用结构，记住computed里需要的是对象</span><br><span class="line">computed: &#123;</span><br><span class="line">  ...mapState([</span><br><span class="line">    &apos;number&apos;</span><br><span class="line">  ]),</span><br><span class="line">  a () &#123;</span><br><span class="line">    return 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -441,7 +446,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -454,7 +459,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -487,7 +492,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如vuex在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在vue中使用vuex的写法，记一个笔记。"><span class="nav-number">1.</span> <span class="nav-text">记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如vuex在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在vue中使用vuex的写法，记一个笔记。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如-vuex-在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在-vue-中使用-vuex-的写法，记一个笔记。"><span class="nav-number">1.</span> <span class="nav-text">记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如 vuex 在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在 vue 中使用 vuex 的写法，记一个笔记。</span></a></li></ol></div>
             
 
           </div>

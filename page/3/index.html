@@ -232,6 +232,127 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://youyi.jingia.com/2018/02/05/mongoose-reference/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="老高">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="友谊同学">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/05/mongoose-reference/" itemprop="url">mongoose关联查询</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-05T16:17:55+08:00">
+                2018-02-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="博客开发中帖子和分类的关联查询，经验记录"><a href="#博客开发中帖子和分类的关联查询，经验记录" class="headerlink" title="博客开发中帖子和分类的关联查询，经验记录"></a>博客开发中帖子和分类的关联查询，经验记录</h5><h6 id="一、初始化两个schema和model"><a href="#一、初始化两个schema和model" class="headerlink" title="一、初始化两个schema和model"></a>一、初始化两个schema和model</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// categories.js     schema</span><br><span class="line">export default new mongoose.Schema(&#123;</span><br><span class="line">  name: String,</span><br><span class="line">  desc: String</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// Category.js        model</span><br><span class="line">export default mongoose.model(&apos;Category&apos;, categoriesSchema)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// topics.js          schema</span><br><span class="line">export default new mongoose.Schema(&#123;</span><br><span class="line">  category: &#123;</span><br><span class="line">    type: mongoose.Schema.types.ObjectId,</span><br><span class="line">    ref: &apos;Category&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  title: &#123;</span><br><span class="line">    type: String</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// Topic.js            model</span><br><span class="line">export default mongoose.model(&apos;Topic&apos;, topicsSchema)</span><br></pre></td></tr></table></figure>
+<h6 id="二、使用populate关联查询，以下写法任选一"><a href="#二、使用populate关联查询，以下写法任选一" class="headerlink" title="二、使用populate关联查询，以下写法任选一"></a>二、使用populate关联查询，以下写法任选一</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Topic.find().populate(&apos;category&apos;)</span><br><span class="line"></span><br><span class="line">Topic.find().populate(&#123;</span><br><span class="line">  path: &apos;category&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Topic.find().populate(&#123;</span><br><span class="line">  path: &apos;category&apos;,</span><br><span class="line">  select: &apos;name&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Topic.find().populate(&#123;</span><br><span class="line">  path: &apos;category&apos;,</span><br><span class="line">  select: &#123;</span><br><span class="line">    _id: 0,</span><br><span class="line">    name: 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://youyi.jingia.com/2018/02/03/blog-skills/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1045,28 +1166,33 @@
       
         
           
-            <h6 id="记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如vuex在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在vue中使用vuex的写法，记一个笔记。"><a href="#记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如vuex在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在vue中使用vuex的写法，记一个笔记。" class="headerlink" title="记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如vuex在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在vue中使用vuex的写法，记一个笔记。"></a>记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如vuex在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在vue中使用vuex的写法，记一个笔记。</h6><ul>
-<li><p>1.创建目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vuex</span><br><span class="line">  - index.js</span><br><span class="line">  - state.js</span><br><span class="line">  - mutations.js</span><br><span class="line">  - actions.js</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2.index.js。此处Vue.use(Vuex)，不是在main.js里的new Vue传参（和router不同）。最后的方法是new Vuex.Store()，不是new Vuex()</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Vuex from &apos;vuex&apos;</span><br><span class="line"></span><br><span class="line">import state from &apos;./state.js&apos;</span><br><span class="line">import mutations from &apos;./mutations.js&apos;</span><br><span class="line">import actions from &apos;./actions.js&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">export default new Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  mutations,</span><br><span class="line">  actions</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>3.state.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const state = &#123;</span><br><span class="line">  number: 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default state</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.mutations.js。此处的参数是state和传入的value，如果多个值请使用对象，此处只能接收两个参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const mutations = &#123;</span><br><span class="line">  test (state, number) &#123;</span><br><span class="line">    state.number = state.number + 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default mutations</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>5.actions.js。此处的参数是包含commit和state的对象，后面可以传第二个参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const actions = &#123;</span><br><span class="line">  test (&#123; commit, state &#125;, value) &#123;</span><br><span class="line">    commit(&apos;test&apos;, 1)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default actions</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>6.在根组件中添加srore，一般是在App.vue文件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import store from &apos;@/vuex&apos;</span><br><span class="line">import &#123; mapState, mapActions &#125; from &apos;vuex&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;App&apos;,</span><br><span class="line">  computed: mapState([</span><br><span class="line">    &apos;number&apos;</span><br><span class="line">  ]),</span><br><span class="line">  methods: mapActions([</span><br><span class="line">    &apos;test&apos;</span><br><span class="line">  ]),</span><br><span class="line">  store</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>7.以上基本就完成了代码的使用，介绍mapState和mapActions的使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// mapState使用一</span><br><span class="line">computed: mapState([</span><br><span class="line">  &apos;number&apos;</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">// mapState使用二</span><br><span class="line">computed: mapState(&#123;</span><br><span class="line">  &apos;number&apos;: state =&gt; state.number</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// mapActions使用一</span><br><span class="line">methods: mapActions([</span><br><span class="line">  &apos;test&apos;</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">// mapActions使用二，使用dispatch，commit类似</span><br><span class="line">this.$store.dispatch(&apos;test&apos;, value)</span><br><span class="line">this.$store.commit(&apos;test&apos;, value)</span><br><span class="line"></span><br><span class="line">// 如果computed里除了mapState之外还有其他计算值，使用结构，记住computed里需要的是对象</span><br><span class="line">computed: &#123;</span><br><span class="line">  ...mapState([</span><br><span class="line">    &apos;number&apos;</span><br><span class="line">  ]),</span><br><span class="line">  a () &#123;</span><br><span class="line">    return 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+            <h6 id="记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如-vuex-在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在-vue-中使用-vuex-的写法，记一个笔记。"><a href="#记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如-vuex-在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在-vue-中使用-vuex-的写法，记一个笔记。" class="headerlink" title="记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如 vuex 在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在 vue 中使用 vuex 的写法，记一个笔记。"></a>记性越来越差，前端的东西也越来越多，但用的也并不是很频繁。比如 vuex 在项目中，一般构建一次就不会在添加了，所以容易忘记。本文介绍在 vue 中使用 vuex 的写法，记一个笔记。</h6><ul>
+<li>1.创建目录</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vuex</span><br><span class="line">  - index.js</span><br><span class="line">  - state.js</span><br><span class="line">  - mutations.js</span><br><span class="line">  - actions.js</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.index.js。此处 Vue.use(Vuex)，不是在 main.js 里的 new Vue 传参（和 router 不同）。最后的方法是 new Vuex.Store()，不是 new Vuex()</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Vuex from &apos;vuex&apos;</span><br><span class="line"></span><br><span class="line">import state from &apos;./state.js&apos;</span><br><span class="line">import mutations from &apos;./mutations.js&apos;</span><br><span class="line">import actions from &apos;./actions.js&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">export default new Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  mutations,</span><br><span class="line">  actions</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.state.js</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const state = &#123;</span><br><span class="line">  number: 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default state</span><br></pre></td></tr></table></figure>
+<ul>
+<li>4.mutations.js。此处的参数是 state 和传入的 value，如果多个值请使用对象，此处只能接收两个参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const mutations = &#123;</span><br><span class="line">  test (state, number) &#123;</span><br><span class="line">    state.number = state.number + 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default mutations</span><br></pre></td></tr></table></figure>
+<ul>
+<li>5.actions.js。此处的参数是包含 commit 和 state 的对象，后面可以传第二个参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const actions = &#123;</span><br><span class="line">  test (&#123; commit, state &#125;, value) &#123;</span><br><span class="line">    commit(&apos;test&apos;, 1)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default actions</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>6.项目入口配置 store。</p>
+</li>
+<li><p>7.以上基本就完成了代码的使用，介绍 mapState 和 mapActions 的使用</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// mapState使用一</span><br><span class="line">computed: mapState([</span><br><span class="line">  &apos;number&apos;</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">// mapState使用二</span><br><span class="line">computed: mapState(&#123;</span><br><span class="line">  &apos;number&apos;: state =&gt; state.number</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// mapActions使用一</span><br><span class="line">methods: mapActions([</span><br><span class="line">  &apos;test&apos;</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">// mapActions使用二，使用dispatch，commit类似</span><br><span class="line">this.$store.dispatch(&apos;test&apos;, value)</span><br><span class="line">this.$store.commit(&apos;test&apos;, value)</span><br><span class="line"></span><br><span class="line">// 如果computed里除了mapState之外还有其他计算值，使用结构，记住computed里需要的是对象</span><br><span class="line">computed: &#123;</span><br><span class="line">  ...mapState([</span><br><span class="line">    &apos;number&apos;</span><br><span class="line">  ]),</span><br><span class="line">  a () &#123;</span><br><span class="line">    return 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1365,126 +1491,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://youyi.jingia.com/2018/01/09/ajax-node-upload/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="老高">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="友谊同学">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/09/ajax-node-upload/" itemprop="url">文件ajax异步上传node服务器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-09T14:47:56+08:00">
-                2018-01-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h6 id="ajax上传文件，本文以图片为例，node作为处理服务器"><a href="#ajax上传文件，本文以图片为例，node作为处理服务器" class="headerlink" title="ajax上传文件，本文以图片为例，node作为处理服务器"></a>ajax上传文件，本文以图片为例，node作为处理服务器</h6><h6 id="html文件，XMLHttpRequest-2"><a href="#html文件，XMLHttpRequest-2" class="headerlink" title="html文件，XMLHttpRequest 2"></a>html文件，XMLHttpRequest 2</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;file&quot;&gt;</span><br><span class="line">  &lt;button id=&quot;upload&quot;&gt;上传&lt;/button&gt;</span><br><span class="line">  &lt;div id=&quot;progress&quot;&gt;0&lt;/div&gt;</span><br><span class="line">  &lt;img src=&quot;&quot; width=&quot;200&quot; id=&quot;image&quot;&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">;(function () &#123;</span><br><span class="line">  &apos;use strict&apos;</span><br><span class="line"></span><br><span class="line">  var xhr = new XMLHttpRequest()</span><br><span class="line"></span><br><span class="line">  upload.addEventListener(&apos;click&apos;, uploadFile, false)</span><br><span class="line">  file.addEventListener(&apos;change&apos;, previewImage, false)</span><br><span class="line"></span><br><span class="line">  function uploadFile () &#123;</span><br><span class="line">    var formData = new FormData()</span><br><span class="line">    formData.append(&apos;test-upload&apos;, file.files[0])</span><br><span class="line">    xhr.onload = uploadSuccess</span><br><span class="line">    xhr.upload.onprogress = setProgress</span><br><span class="line"></span><br><span class="line">    xhr.open(&apos;post&apos;, &apos;/upload&apos;, true)</span><br><span class="line"></span><br><span class="line">    xhr.send(formData)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function uploadSuccess () &#123;</span><br><span class="line">    if (xhr.readyState === 4) &#123;</span><br><span class="line">      console.log(xhr.responseText)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function setProgress (event) &#123;</span><br><span class="line">    if (event.lengthComputable) &#123;</span><br><span class="line">      var complete = parseInt(event.loaded / event.total * 100)</span><br><span class="line">      progress.innerHTML = complete + &apos;%&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function previewImage (event) &#123;</span><br><span class="line">    var reader = new FileReader()</span><br><span class="line">    reader.onload = function (event) &#123;</span><br><span class="line">      image.src = event.target.result</span><br><span class="line">    &#125;</span><br><span class="line">    reader.readAsDataURL(event.target.files[0])</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;)()</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h6 id="node服务端文件，express和multer中间件"><a href="#node服务端文件，express和multer中间件" class="headerlink" title="node服务端文件，express和multer中间件"></a>node服务端文件，express和multer中间件</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">const express = require(&apos;express&apos;)</span><br><span class="line">const upload = require(&apos;multer&apos;)(&#123; dest: &apos;uploads/&apos; &#125;)</span><br><span class="line"></span><br><span class="line">const path = require(&apos;path&apos;)</span><br><span class="line">const fs = require(&apos;fs&apos;)</span><br><span class="line"></span><br><span class="line">const port = 3000</span><br><span class="line"></span><br><span class="line">let app = express()</span><br><span class="line"></span><br><span class="line">app.set(&apos;port&apos;, port)</span><br><span class="line"></span><br><span class="line">app.use(express.static(&apos;./&apos;))</span><br><span class="line"></span><br><span class="line">app.post(&apos;/upload&apos;, upload.single(&apos;test-upload&apos;), function (req, res) &#123;</span><br><span class="line">  if (!req.file) &#123;</span><br><span class="line">    res.json(&#123; ok: false &#125;)</span><br><span class="line">    return</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  console.log(&apos;-------------------------------------------&apos;)</span><br><span class="line">  console.log(req.file)</span><br><span class="line">  console.log(&apos;-------------------------------------------&apos;)</span><br><span class="line"></span><br><span class="line">  res.json(&#123; ok: true &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(port, function () &#123;</span><br><span class="line">  console.log(&apos;listen on port&apos; + port)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1535,7 +1541,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1548,7 +1554,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
