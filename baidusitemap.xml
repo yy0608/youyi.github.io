@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2021/05/31/module-package/</loc>
+    <lastmod>2021-05-31T13:17:42.219Z</lastmod>
+    <data>
+        <display>
+        <title>单页面应用分模块打包</title>
+        <pubTime>2021-05-31T12:35:06.000Z</pubTime>
+        
+        <tag>分模块打包</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2021/05/31/frontend-use/</loc>
+    <lastmod>2021-05-31T13:10:56.416Z</lastmod>
+    <data>
+        <display>
+        <title>前端开发环境搭建</title>
+        <pubTime>2021-05-31T12:35:06.000Z</pubTime>
+        
+        <tag>前端的开发环境</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/05/18/webhook-deploy/</loc>
+    <lastmod>2021-05-31T12:26:07.037Z</lastmod>
+    <data>
+        <display>
+        <title>webhook-deploy</title>
+        <pubTime>2018-05-18T03:05:06.000Z</pubTime>
+        
+        <tag>webhook</tag>
+         
+        <tag>deploy</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/02/27/wxapp-login/</loc>
+    <lastmod>2021-05-31T12:26:07.037Z</lastmod>
+    <data>
+        <display>
+        <title>nodejs和redis对小程序登录状态的维护</title>
+        <pubTime>2018-02-27T10:00:02.000Z</pubTime>
+        
+        <tag>小程序登录状态</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/03/vue-optimize/</loc>
+    <lastmod>2021-05-31T12:26:07.036Z</lastmod>
+    <data>
+        <display>
+        <title>vue多页面优化之seo和路由懒加载</title>
+        <pubTime>2018-01-03T08:01:41.000Z</pubTime>
+        
+        <tag>vue</tag>
+         
+        <tag>路由懒加载</tag>
+         
+        <tag>vue-router lazy-load</tag>
+         
+        <tag>code spliting</tag>
+         
+        <tag>webpack代码分割</tag>
+         
+        <tag>prerender-spa-plugin</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/17/vuex/</loc>
+    <lastmod>2021-05-31T12:26:07.036Z</lastmod>
+    <data>
+        <display>
+        <title>vuex在vue中的使用</title>
+        <pubTime>2018-01-17T08:46:52.000Z</pubTime>
+        
+        <tag>vuex</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/02/violentmonkey/</loc>
+    <lastmod>2021-05-31T12:26:07.035Z</lastmod>
+    <data>
+        <display>
+        <title>violentmonkey暴力猴的使用</title>
+        <pubTime>2018-01-02T08:58:42.000Z</pubTime>
+        
+        <tag>violentmonkey</tag>
+         
+        <tag>暴力猴</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/22/vue-cookie/</loc>
+    <lastmod>2021-05-31T12:26:07.035Z</lastmod>
+    <data>
+        <display>
+        <title>通过vue-cookie在浏览器端使用cookie（博客开发三）</title>
+        <pubTime>2018-01-22T02:19:41.000Z</pubTime>
+        
+        <tag>客户端cookie</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/08/touch-event/</loc>
+    <lastmod>2021-05-31T12:26:07.034Z</lastmod>
+    <data>
+        <display>
+        <title>移动端touch事件遇到的问题</title>
+        <pubTime>2018-01-08T08:10:16.000Z</pubTime>
+        
+        <tag>touch事件</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/16/translate3d-animation/</loc>
+    <lastmod>2021-05-31T12:26:07.034Z</lastmod>
+    <data>
+        <display>
+        <title>translate3d_animation</title>
+        <pubTime>2018-01-16T06:29:25.000Z</pubTime>
+        
+        <tag>translate3d</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/06/28/template/</loc>
+    <lastmod>2021-05-31T12:26:07.033Z</lastmod>
+    <data>
+        <display>
+        <title>script标签text/template的使用</title>
+        <pubTime>2018-06-28T07:19:08.000Z</pubTime>
+        
+        <tag>template</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/02/28/sms-service/</loc>
+    <lastmod>2021-05-31T12:26:07.031Z</lastmod>
+    <data>
+        <display>
+        <title>第三方短信服务（腾讯云）的接入</title>
+        <pubTime>2018-02-28T08:12:42.000Z</pubTime>
+        
+        <tag>短信验证码</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/03/react-native-install-windows/</loc>
+    <lastmod>2021-05-31T12:26:07.030Z</lastmod>
+    <data>
+        <display>
+        <title>react native在windows环境的安装配置</title>
+        <pubTime>2018-01-03T01:26:16.000Z</pubTime>
+        
+        <tag>react-native</tag>
+         
+        <tag>react native windows环境</tag>
+         
+        <tag>react-native android环境</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/06/node-project/</loc>
+    <lastmod>2021-05-31T12:26:07.029Z</lastmod>
+    <data>
+        <display>
+        <title>node文件操作之自动化构建</title>
+        <pubTime>2018-01-06T08:17:27.000Z</pubTime>
+        
+        <tag>自动化构建</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/02/27/qiniu-upload/</loc>
+    <lastmod>2021-05-31T12:26:07.029Z</lastmod>
+    <data>
+        <display>
+        <title>七牛FormData上传和小程序上传</title>
+        <pubTime>2018-02-27T09:42:37.000Z</pubTime>
+        
+        <tag>七牛上传</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/11/nodejs-mongodb-blog/</loc>
+    <lastmod>2021-05-31T12:26:07.029Z</lastmod>
+    <data>
+        <display>
+        <title>nodejs和mongodb搭建博客（博客开发一）</title>
+        <pubTime>2018-01-11T09:26:23.000Z</pubTime>
+        
+        <tag>nodejs搭建博客</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/02/06/nginx-https/</loc>
+    <lastmod>2021-05-31T12:26:07.028Z</lastmod>
+    <data>
+        <display>
+        <title>nginx配置多端口多域名，并配置https</title>
+        <pubTime>2018-02-06T10:12:57.000Z</pubTime>
+        
+        <tag>nginx配置</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/07/14/ngrok-https/</loc>
+    <lastmod>2021-05-31T12:26:07.028Z</lastmod>
+    <data>
+        <display>
+        <title>sunny-ngrok内网穿透实现https</title>
+        <pubTime>2018-07-14T05:38:01.000Z</pubTime>
+        
+        <tag>ngrok</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/05/19/mpcode/</loc>
+    <lastmod>2021-05-31T12:26:07.025Z</lastmod>
+    <data>
+        <display>
+        <title>生成小程序二维码并上传七牛</title>
+        <pubTime>2018-05-19T08:24:31.000Z</pubTime>
+        
+        <tag>小程序二维码</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/03/17/mongoose-geo/</loc>
+    <lastmod>2021-05-31T12:26:07.024Z</lastmod>
+    <data>
+        <display>
+        <title>mongoose的地理位置查看附近信息</title>
+        <pubTime>2018-03-17T06:22:46.000Z</pubTime>
+        
+        <tag>地理位置</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/04/mongodb-study/</loc>
+    <lastmod>2021-05-31T12:26:07.024Z</lastmod>
+    <data>
+        <display>
+        <title>mongodb学习</title>
+        <pubTime>2018-01-04T09:26:37.000Z</pubTime>
+        
+        <tag>mongodb</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/02/05/mongoose-reference/</loc>
+    <lastmod>2021-05-31T12:26:07.024Z</lastmod>
+    <data>
+        <display>
+        <title>mongoose关联查询</title>
+        <pubTime>2018-02-05T08:17:55.000Z</pubTime>
+        
+        <tag>mongoose关联查询</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/03/02/img2base64/</loc>
+    <lastmod>2021-05-31T12:26:07.023Z</lastmod>
+    <data>
+        <display>
+        <title>将图片转化为base64并上传</title>
+        <pubTime>2018-03-02T07:27:11.000Z</pubTime>
+        
+        <tag>base64</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2017/12/30/markdown-write/</loc>
+    <lastmod>2021-05-31T12:26:07.023Z</lastmod>
+    <data>
+        <display>
+        <title>markdown常用基本写法</title>
+        <pubTime>2017-12-30T01:44:26.000Z</pubTime>
+        
+        <tag>markdown</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/02/10/mongodb-password/</loc>
+    <lastmod>2021-05-31T12:26:07.023Z</lastmod>
+    <data>
+        <display>
+        <title>给mongodb设置密码</title>
+        <pubTime>2018-02-10T08:01:09.000Z</pubTime>
+        
+        <tag>mongodb密码设置</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/05/03/guidelines/</loc>
+    <lastmod>2021-05-31T12:26:07.022Z</lastmod>
+    <data>
+        <display>
+        <title>guidelines</title>
+        <pubTime>2018-05-03T04:03:56.000Z</pubTime>
+        
+        <tag>前端代码规范</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2021/05/31/hexo-use/</loc>
+    <lastmod>2021-05-31T12:26:07.022Z</lastmod>
+    <data>
+        <display>
+        <title>hexo的基础命令，详细安装使用请看下一篇文章</title>
+        <pubTime>2021-05-31T12:26:07.022Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2017/12/25/hexo_use/</loc>
+    <lastmod>2021-05-31T12:26:07.022Z</lastmod>
+    <data>
+        <display>
+        <title>github技术博客hexo使用</title>
+        <pubTime>2017-12-25T08:04:15.000Z</pubTime>
+        
+        <tag>技术博客</tag>
+         
+        <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/03/08/express-session/</loc>
+    <lastmod>2021-05-31T12:26:07.021Z</lastmod>
+    <data>
+        <display>
+        <title>nodejs中管理使用express-session和redis进行会话管理</title>
+        <pubTime>2018-03-08T08:01:07.000Z</pubTime>
+        
+        <tag>session</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/19/git-area/</loc>
+    <lastmod>2021-05-31T12:26:07.021Z</lastmod>
+    <data>
+        <display>
+        <title>局域网内git的搭建和使用</title>
+        <pubTime>2018-01-19T09:46:20.000Z</pubTime>
+        
+        <tag>局域网git</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/18/crypto-hash/</loc>
+    <lastmod>2021-05-31T12:26:07.020Z</lastmod>
+    <data>
+        <display>
+        <title>crypto模块介绍</title>
+        <pubTime>2018-01-18T03:01:20.000Z</pubTime>
+        
+        <tag>crypto</tag>
+         
+        <tag>hash</tag>
+         
+        <tag>md5</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/03/09/common-commands/</loc>
+    <lastmod>2021-05-31T12:26:07.020Z</lastmod>
+    <data>
+        <display>
+        <title>常用命令集合</title>
+        <pubTime>2018-03-09T01:19:50.000Z</pubTime>
+        
+        <tag>commands</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/05/css-tech/</loc>
+    <lastmod>2021-05-31T12:26:07.020Z</lastmod>
+    <data>
+        <display>
+        <title>CSS中的一些黑科技技巧</title>
+        <pubTime>2018-01-05T01:14:15.000Z</pubTime>
+        
+        <tag>css3</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/03/09/captcha-verify/</loc>
+    <lastmod>2021-05-31T12:26:07.019Z</lastmod>
+    <data>
+        <display>
+        <title>使用顶象进行滑动验证</title>
+        <pubTime>2018-03-09T10:06:39.000Z</pubTime>
+        
+        <tag>验证码校验</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/02/03/blog-skills/</loc>
+    <lastmod>2021-05-31T12:26:07.019Z</lastmod>
+    <data>
+        <display>
+        <title>node和vue博客开发中的技巧经验小结（博客开发五）</title>
+        <pubTime>2018-02-03T06:38:46.000Z</pubTime>
+        
+        <tag>node博客开发技巧</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/22/blog-secure/</loc>
+    <lastmod>2021-05-31T12:26:07.019Z</lastmod>
+    <data>
+        <display>
+        <title>博客开发中的安全在本项目的实践（博客开发四）</title>
+        <pubTime>2018-01-22T06:59:06.000Z</pubTime>
+        
+        <tag>cookie安全</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/05/10/auto-deploy/</loc>
+    <lastmod>2021-05-31T12:26:07.019Z</lastmod>
+    <data>
+        <display>
+        <title>vue自动化上传七牛和云主机</title>
+        <pubTime>2018-05-10T03:57:28.000Z</pubTime>
+        
+        <tag>vue部署</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/09/ajax-node-upload/</loc>
+    <lastmod>2021-05-31T12:26:07.018Z</lastmod>
+    <data>
+        <display>
+        <title>文件ajax异步上传node服务器</title>
+        <pubTime>2018-01-09T06:47:56.000Z</pubTime>
+        
+        <tag>ajax文件上传</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://youyi.jingia.com/2018/01/20/CORS-cookies/</loc>
+    <lastmod>2021-05-31T12:26:07.018Z</lastmod>
+    <data>
+        <display>
+        <title>通过CORS解决跨域cookies（博客开发二）</title>
+        <pubTime>2018-01-20T07:44:47.000Z</pubTime>
+        
+        <tag>跨域cookies</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+</urlset>

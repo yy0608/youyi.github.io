@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="template," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="点餐项目中前后端没分离，后端使用thinkPHP，前端实在不想使用jQuery，仍然使用了vue库，项目不太适合webpack和es6的文件模块引用，可以在页面内使用script的text/template模板，后面可以借助thinkPHP加入文件变量引入组件的使用，使用代码片段123456789var app = new Vue(&amp;#123;  el: &amp;apos;#app&amp;apos;,  co">
+<meta name="keywords" content="template">
+<meta property="og:type" content="article">
+<meta property="og:title" content="script标签text&#x2F;template的使用">
+<meta property="og:url" content="http://youyi.jingia.com/2018/06/28/template/index.html">
+<meta property="og:site_name" content="友谊同学">
+<meta property="og:description" content="点餐项目中前后端没分离，后端使用thinkPHP，前端实在不想使用jQuery，仍然使用了vue库，项目不太适合webpack和es6的文件模块引用，可以在页面内使用script的text/template模板，后面可以借助thinkPHP加入文件变量引入组件的使用，使用代码片段123456789var app = new Vue(&amp;#123;  el: &amp;apos;#app&amp;apos;,  co">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-05-31T12:26:07.033Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="script标签text&#x2F;template的使用">
+<meta name="twitter:description" content="点餐项目中前后端没分离，后端使用thinkPHP，前端实在不想使用jQuery，仍然使用了vue库，项目不太适合webpack和es6的文件模块引用，可以在页面内使用script的text/template模板，后面可以借助thinkPHP加入文件变量引入组件的使用，使用代码片段123456789var app = new Vue(&amp;#123;  el: &amp;apos;#app&amp;apos;,  co">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://youyi.jingia.com/2018/06/28/template/"/>
+
+
+
+
+
+  <title>script标签text/template的使用 | 友谊同学</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">友谊同学</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记忆不好的友谊同学的技术笔记本</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://youyi.jingia.com/2018/06/28/template/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="老高">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="友谊同学">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">script标签text/template的使用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T15:19:08+08:00">
+                2018-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="点餐项目中前后端没分离，后端使用thinkPHP，前端实在不想使用jQuery，仍然使用了vue库，项目不太适合webpack和es6的文件模块引用，可以在页面内使用script的text-template模板，后面可以借助thinkPHP加入文件变量引入"><a href="#点餐项目中前后端没分离，后端使用thinkPHP，前端实在不想使用jQuery，仍然使用了vue库，项目不太适合webpack和es6的文件模块引用，可以在页面内使用script的text-template模板，后面可以借助thinkPHP加入文件变量引入" class="headerlink" title="点餐项目中前后端没分离，后端使用thinkPHP，前端实在不想使用jQuery，仍然使用了vue库，项目不太适合webpack和es6的文件模块引用，可以在页面内使用script的text/template模板，后面可以借助thinkPHP加入文件变量引入"></a>点餐项目中前后端没分离，后端使用thinkPHP，前端实在不想使用jQuery，仍然使用了vue库，项目不太适合webpack和es6的文件模块引用，可以在页面内使用script的text/template模板，后面可以借助thinkPHP加入文件变量引入</h2><h2 id="组件的使用，使用代码片段"><a href="#组件的使用，使用代码片段" class="headerlink" title="组件的使用，使用代码片段"></a>组件的使用，使用代码片段</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var app = new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    &apos;comp-a&apos;: &#123;</span><br><span class="line">      props: [ &apos;name&apos; ],</span><br><span class="line">      template: &apos;&lt;div&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt;&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="使用script的template"><a href="#使用script的template" class="headerlink" title="使用script的template"></a>使用script的template</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/template&quot; id=&quot;tpl&quot;&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="template注册组件的时候使用一"><a href="#template注册组件的时候使用一" class="headerlink" title="template注册组件的时候使用一"></a>template注册组件的时候使用一</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var compB = Vue.extend(&#123;</span><br><span class="line">  props: [ &apos;name&apos; ],</span><br><span class="line">  template: &apos;#tpl&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">var app = new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    &apos;comp-b&apos;: compB</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="template注册组件的时候使用二"><a href="#template注册组件的时候使用二" class="headerlink" title="template注册组件的时候使用二"></a>template注册组件的时候使用二</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var app = new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    &apos;comp-b&apos;: &#123;</span><br><span class="line">      props: [ &apos;name&apos; ],</span><br><span class="line">      template: tpl.innerHTML</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="template注册组件的时候使用三，异步引入组件文件"><a href="#template注册组件的时候使用三，异步引入组件文件" class="headerlink" title="template注册组件的时候使用三，异步引入组件文件"></a>template注册组件的时候使用三，异步引入组件文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var app = new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    &apos;comp-b&apos;: function (resolve) &#123;</span><br><span class="line">      axios(&#123;</span><br><span class="line">        url: &apos;/Public/tpls/tpl1.html&apos;</span><br><span class="line">      &#125;)</span><br><span class="line">        .then(function (res) &#123;</span><br><span class="line">          resolve(&#123;</span><br><span class="line">            props: [ &apos;name&apos; ],</span><br><span class="line">            template: res.data</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">        .catch(err =&gt; &#123;</span><br><span class="line">          console.log(err)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="也可借助thinkPHP文件引用"><a href="#也可借助thinkPHP文件引用" class="headerlink" title="也可借助thinkPHP文件引用"></a>也可借助thinkPHP文件引用</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/template/" rel="tag"># template</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/19/mpcode/" rel="next" title="生成小程序二维码并上传七牛">
+                <i class="fa fa-chevron-left"></i> 生成小程序二维码并上传七牛
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/14/ngrok-https/" rel="prev" title="sunny-ngrok内网穿透实现https">
+                sunny-ngrok内网穿透实现https <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">老高</p>
+              <p class="site-description motion-element" itemprop="description">WEB前端开发,前端开发博客专注于前端开发,分享前端开发资源和前端开发技术资讯等。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#点餐项目中前后端没分离，后端使用thinkPHP，前端实在不想使用jQuery，仍然使用了vue库，项目不太适合webpack和es6的文件模块引用，可以在页面内使用script的text-template模板，后面可以借助thinkPHP加入文件变量引入"><span class="nav-number">1.</span> <span class="nav-text">点餐项目中前后端没分离，后端使用thinkPHP，前端实在不想使用jQuery，仍然使用了vue库，项目不太适合webpack和es6的文件模块引用，可以在页面内使用script的text/template模板，后面可以借助thinkPHP加入文件变量引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件的使用，使用代码片段"><span class="nav-number">2.</span> <span class="nav-text">组件的使用，使用代码片段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用script的template"><span class="nav-number">3.</span> <span class="nav-text">使用script的template</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#template注册组件的时候使用一"><span class="nav-number">4.</span> <span class="nav-text">template注册组件的时候使用一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#template注册组件的时候使用二"><span class="nav-number">5.</span> <span class="nav-text">template注册组件的时候使用二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#template注册组件的时候使用三，异步引入组件文件"><span class="nav-number">6.</span> <span class="nav-text">template注册组件的时候使用三，异步引入组件文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#也可借助thinkPHP文件引用"><span class="nav-number">7.</span> <span class="nav-text">也可借助thinkPHP文件引用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">老高</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

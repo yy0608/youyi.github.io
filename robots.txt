@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /about/
+Allow: /404/
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+Sitemap: http://youyi.jingia.com/sitemap.xml
+Sitemap: http://youyi.jingia.com/baidusitemap.xml
