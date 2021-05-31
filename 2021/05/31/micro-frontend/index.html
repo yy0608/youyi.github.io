@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一、基本使用 主应用 qiankun 注册  子应用暴露 bootstrap, mount, unmount 三个方法，并在打包结果配置为 libary: umd   二、子页面切换时缓存页面三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router四、主子应用通信， 观察者模式，onGlobalStateChange redux vuex(项目 Vue 前提，耦合严重的拆分">
+<meta name="description" content="一、基本使用 主应用 qiankun 注册  子应用暴露 bootstrap, mount, unmount 三个方法，并在打包结果配置为 libary: umd   二、子应用切换时缓存页面三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router四、主子应用通信 观察者模式，onGlobalStateChange vuex(项目 Vue 前提，耦合严重的拆分应用，用 pr">
 <meta name="keywords" content="微前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="qiankun微前端架构注意点">
 <meta property="og:url" content="http://youyi.jingia.com/2021/05/31/micro-frontend/index.html">
 <meta property="og:site_name" content="友谊同学">
-<meta property="og:description" content="一、基本使用 主应用 qiankun 注册  子应用暴露 bootstrap, mount, unmount 三个方法，并在打包结果配置为 libary: umd   二、子页面切换时缓存页面三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router四、主子应用通信， 观察者模式，onGlobalStateChange redux vuex(项目 Vue 前提，耦合严重的拆分">
+<meta property="og:description" content="一、基本使用 主应用 qiankun 注册  子应用暴露 bootstrap, mount, unmount 三个方法，并在打包结果配置为 libary: umd   二、子应用切换时缓存页面三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router四、主子应用通信 观察者模式，onGlobalStateChange vuex(项目 Vue 前提，耦合严重的拆分应用，用 pr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-05-31T14:10:31.871Z">
+<meta property="og:updated_time" content="2021-05-31T14:15:48.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="qiankun微前端架构注意点">
-<meta name="twitter:description" content="一、基本使用 主应用 qiankun 注册  子应用暴露 bootstrap, mount, unmount 三个方法，并在打包结果配置为 libary: umd   二、子页面切换时缓存页面三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router四、主子应用通信， 观察者模式，onGlobalStateChange redux vuex(项目 Vue 前提，耦合严重的拆分">
+<meta name="twitter:description" content="一、基本使用 主应用 qiankun 注册  子应用暴露 bootstrap, mount, unmount 三个方法，并在打包结果配置为 libary: umd   二、子应用切换时缓存页面三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router四、主子应用通信 观察者模式，onGlobalStateChange vuex(项目 Vue 前提，耦合严重的拆分应用，用 pr">
 
 
 
@@ -306,9 +306,8 @@
 <li><p>子应用暴露 bootstrap, mount, unmount 三个方法，并在打包结果配置为 libary: umd</p>
 </li>
 </ol>
-<h5 id="二、子页面切换时缓存页面"><a href="#二、子页面切换时缓存页面" class="headerlink" title="二、子页面切换时缓存页面"></a>二、子页面切换时缓存页面</h5><h5 id="三、子应用为单页面应用并使用了前端-router，此时缓存切换前端-router"><a href="#三、子应用为单页面应用并使用了前端-router，此时缓存切换前端-router" class="headerlink" title="三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router"></a>三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router</h5><h5 id="四、主子应用通信，"><a href="#四、主子应用通信，" class="headerlink" title="四、主子应用通信，"></a>四、主子应用通信，</h5><ol>
+<h5 id="二、子应用切换时缓存页面"><a href="#二、子应用切换时缓存页面" class="headerlink" title="二、子应用切换时缓存页面"></a>二、子应用切换时缓存页面</h5><h5 id="三、子应用为单页面应用并使用了前端-router，此时缓存切换前端-router"><a href="#三、子应用为单页面应用并使用了前端-router，此时缓存切换前端-router" class="headerlink" title="三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router"></a>三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router</h5><h5 id="四、主子应用通信"><a href="#四、主子应用通信" class="headerlink" title="四、主子应用通信"></a>四、主子应用通信</h5><ol>
 <li>观察者模式，onGlobalStateChange</li>
-<li>redux</li>
 <li>vuex(项目 Vue 前提，耦合严重的拆分应用，用 props 传递 store，Vue.observable 数据响应)</li>
 </ol>
 
@@ -476,7 +475,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、基本使用"><span class="nav-number">1.</span> <span class="nav-text">一、基本使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二、子页面切换时缓存页面"><span class="nav-number">2.</span> <span class="nav-text">二、子页面切换时缓存页面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三、子应用为单页面应用并使用了前端-router，此时缓存切换前端-router"><span class="nav-number">3.</span> <span class="nav-text">三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#四、主子应用通信，"><span class="nav-number">4.</span> <span class="nav-text">四、主子应用通信，</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、基本使用"><span class="nav-number">1.</span> <span class="nav-text">一、基本使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二、子应用切换时缓存页面"><span class="nav-number">2.</span> <span class="nav-text">二、子应用切换时缓存页面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三、子应用为单页面应用并使用了前端-router，此时缓存切换前端-router"><span class="nav-number">3.</span> <span class="nav-text">三、子应用为单页面应用并使用了前端 router，此时缓存切换前端 router</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#四、主子应用通信"><span class="nav-number">4.</span> <span class="nav-text">四、主子应用通信</span></a></li></ol></div>
             
 
           </div>
