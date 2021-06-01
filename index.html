@@ -355,7 +355,17 @@
 <li>Vue 自定义事件</li>
 <li>Promise</li>
 </ol>
-<h4 id="三、9-迭代器模式"><a href="#三、9-迭代器模式" class="headerlink" title="三、9.迭代器模式"></a>三、9.迭代器模式</h4><h4 id="三、10-状态模式"><a href="#三、10-状态模式" class="headerlink" title="三、10.状态模式"></a>三、10.状态模式</h4>
+<h4 id="三、9-迭代器模式-ES6-Iterator-迭代器"><a href="#三、9-迭代器模式-ES6-Iterator-迭代器" class="headerlink" title="三、9.迭代器模式(ES6 Iterator 迭代器)"></a>三、9.迭代器模式(ES6 Iterator 迭代器)</h4><ol>
+<li>有序集合数据类型 Array, Map, Set, String, arguments, NodeList</li>
+<li>迭代器 Symbol.iterator 属性</li>
+<li>可以使用 entries()方法，也可以用 for…of 遍历（不知道长度）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype[Symbol.iterator]() // Array Iterator &#123;&#125;</span><br><span class="line">Array.prototype[Symbol.iterator]().next() // &#123;value: undefined, done: true&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="三、10-状态模式"><a href="#三、10-状态模式" class="headerlink" title="三、10.状态模式"></a>三、10.状态模式</h4><ol>
+<li>有限状态机制（收藏/取消）</li>
+<li>Promise</li>
+</ol>
+
           
         
       
