@@ -232,6 +232,142 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://youyi.jingia.com/2018/02/06/nginx-https/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="老高">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="友谊同学">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/06/nginx-https/" itemprop="url">nginx配置多端口多域名，并配置https</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-06T18:12:57+08:00">
+                2018-02-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h6 id="一、本文介绍使用nginx多个域名配置一个服务器的多个端口，nginx安装自行搜索，本文通过yum安装，不是源码安装多域名配置，-ssl参考文章"><a href="#一、本文介绍使用nginx多个域名配置一个服务器的多个端口，nginx安装自行搜索，本文通过yum安装，不是源码安装多域名配置，-ssl参考文章" class="headerlink" title="一、本文介绍使用nginx多个域名配置一个服务器的多个端口，nginx安装自行搜索，本文通过yum安装，不是源码安装多域名配置， ssl参考文章"></a>一、本文介绍使用nginx多个域名配置一个服务器的多个端口，nginx安装自行搜索，本文通过yum安装，不是源码安装<a href="https://segmentfault.com/a/1190000004453295" target="_blank" rel="noopener">多域名配置</a>， <a href="https://www.jianshu.com/p/9523d888cf77" target="_blank" rel="noopener">ssl参考文章</a></h6><h6 id="二、启动目录和配置目录"><a href="#二、启动目录和配置目录" class="headerlink" title="二、启动目录和配置目录"></a>二、启动目录和配置目录</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 启动目录，which nginx查看位置，nginx启动，service nginx restart重启</span><br><span class="line">/usr/sbin/nginx</span><br><span class="line"></span><br><span class="line">// 主配置文件目录（默认）</span><br><span class="line">/etc/nginx/nginx.conf</span><br><span class="line">// 自己添加配置文件</span><br><span class="line">/root/nginx/jingia.com/*.conf</span><br></pre></td></tr></table></figure>
+<h6 id="三、主配置文件内容-其中包含了自己添加的配置文件-，nginx-conf"><a href="#三、主配置文件内容-其中包含了自己添加的配置文件-，nginx-conf" class="headerlink" title="三、主配置文件内容(其中包含了自己添加的配置文件)，nginx.conf"></a>三、主配置文件内容(其中包含了自己添加的配置文件)，nginx.conf</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    include       /root/nginx/jingia.com/*.conf;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  &apos;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &apos;</span><br><span class="line">    #                  &apos;$status $body_bytes_sent &quot;$http_referer&quot; &apos;</span><br><span class="line">    #                  &apos;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&apos;;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        #error_page  404              /404.html;</span><br><span class="line"></span><br><span class="line">        # redirect server error pages to the static page /50x.html</span><br><span class="line">        #</span><br><span class="line">        error_page   500 502 503 504  /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">            root   html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        # proxy the PHP scripts to Apache listening on 127.0.0.1:80</span><br><span class="line">        #</span><br></pre></td></tr></table></figure>
+<h6 id="四、自己添加的配置文件。注意http-server-和https-server-是写在一个server里的，分开写会有问题，下面的三个配置比较类似，后面两个没有配置https。（其中有使用到ssl证书，可以到腾讯云申请免费证书）"><a href="#四、自己添加的配置文件。注意http-server-和https-server-是写在一个server里的，分开写会有问题，下面的三个配置比较类似，后面两个没有配置https。（其中有使用到ssl证书，可以到腾讯云申请免费证书）" class="headerlink" title="四、自己添加的配置文件。注意http server 和https server 是写在一个server里的，分开写会有问题，下面的三个配置比较类似，后面两个没有配置https。（其中有使用到ssl证书，可以到腾讯云申请免费证书）"></a>四、自己添加的配置文件。注意http server 和https server 是写在一个server里的，分开写会有问题，下面的三个配置比较类似，后面两个没有配置https。（其中有使用到ssl证书，可以到腾讯云申请免费证书）</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">// www.conf</span><br><span class="line">upstream www.jingia.com &#123;</span><br><span class="line">    server 127.0.0.1:3000;</span><br><span class="line">    keepalive 8;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># the nginx server instance</span><br><span class="line">server &#123;</span><br><span class="line">    listen 0.0.0.0:80;</span><br><span class="line">    listen       443 ssl;</span><br><span class="line">    server_name www.jingia.com;</span><br><span class="line"></span><br><span class="line">    ssl_certificate      /root/ssl/1_www.jingia.com_bundle.crt;</span><br><span class="line">    ssl_certificate_key  /root/ssl/2_www.jingia.com.key;</span><br><span class="line"></span><br><span class="line">    ssl_session_cache    shared:SSL:1m;</span><br><span class="line">    ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">    ssl_ciphers  HIGH:!aNULL:!MD5;</span><br><span class="line">    ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">      proxy_set_header Host $http_host;</span><br><span class="line">      proxy_set_header X-NginX-Proxy true;</span><br><span class="line"></span><br><span class="line">      # value for proxy_pass has to match upstream name</span><br><span class="line">      proxy_pass http://www.jingia.com/;</span><br><span class="line">      proxy_redirect off;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// m.conf</span><br><span class="line">upstream m.jingia.com &#123;</span><br><span class="line">    server 127.0.0.1:3001;</span><br><span class="line">    keepalive 8;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># the nginx server instance</span><br><span class="line">server &#123;</span><br><span class="line">    listen 0.0.0.0:80;</span><br><span class="line">    server_name m.jingia.com;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">      proxy_set_header Host $http_host;</span><br><span class="line">      proxy_set_header X-NginX-Proxy true;</span><br><span class="line"></span><br><span class="line">      # value for proxy_pass has to match upstream name</span><br><span class="line">      proxy_pass http://m.jingia.com/;</span><br><span class="line">      proxy_redirect off;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// all.conf</span><br><span class="line">upstream jingia.com &#123;</span><br><span class="line">    server 127.0.0.1:3000;</span><br><span class="line">    keepalive 8;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># the nginx server instance</span><br><span class="line">server &#123;</span><br><span class="line">    listen 0.0.0.0:80;</span><br><span class="line">    server_name jingia.com;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">      proxy_set_header Host $http_host;</span><br><span class="line">      proxy_set_header X-NginX-Proxy true;</span><br><span class="line"></span><br><span class="line">      # value for proxy_pass has to match upstream name</span><br><span class="line">      proxy_pass http://jingia.com/;</span><br><span class="line">      proxy_redirect off;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h6 id="五、直接添加https配置，会报错，”ssl”-parameter-requires-ngx-http-ssl-module，参考文章"><a href="#五、直接添加https配置，会报错，”ssl”-parameter-requires-ngx-http-ssl-module，参考文章" class="headerlink" title="五、直接添加https配置，会报错，”ssl” parameter requires ngx_http_ssl_module，参考文章"></a>五、直接添加https配置，会报错，”ssl” parameter requires ngx_http_ssl_module，<a href="https://www.codelast.com/%E5%8E%9F%E5%88%9B-%E4%B8%BAnginx%E6%B7%BB%E5%8A%A0ssl%E6%94%AF%E6%8C%81%E6%A8%A1%E5%9D%97/" target="_blank" rel="noopener">参考文章</a></h6><ul>
+<li><p>1.查看旧的编译参数，（注意是大写的V，小写显示版本号）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/nginx/sbin/nginx -V</span><br><span class="line"></span><br><span class="line">// 得到--with-pcre=/root/lib/pcre-8.35 --with-zlib=/root/lib/zlib-1.2.11 --prefix=/usr/local/nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.进入到源码目录，（我的是/root/lib/nginx-1.12.2），加上上面的编译参数，新加需要的ssl模块，重新编译</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure --with-pcre=/root/lib/pcre-8.35 --with-zlib=/root/lib/zlib-1.2.11 --prefix=/usr/local/nginx --with-http_ssl_module</span><br><span class="line"></span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.使用的是make，（不是make install，不然会被覆盖）</p>
+</li>
+<li>4.备份以前的nginx，替换需要的部分<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/local/nginx/sbin/nginx ~/bak/</span><br><span class="line"></span><br><span class="line">cp objs/nginx /usr/local/nginx/sbin/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="六、-configure-error-SSL-modules-require-the-OpenSSL-library，参考文章"><a href="#六、-configure-error-SSL-modules-require-the-OpenSSL-library，参考文章" class="headerlink" title="六、./configure: error: SSL modules require the OpenSSL library，参考文章"></a>六、./configure: error: SSL modules require the OpenSSL library，<a href="http://blog.csdn.net/testcs_dn/article/details/51461999" target="_blank" rel="noopener">参考文章</a></h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install openssl openssl-devel</span><br></pre></td></tr></table></figure>
+<h6 id="七、重启nginx命令，连接云主机上的mongodb数据库"><a href="#七、重启nginx命令，连接云主机上的mongodb数据库" class="headerlink" title="七、重启nginx命令，连接云主机上的mongodb数据库"></a>七、重启nginx命令，连接云主机上的mongodb数据库</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 查询nginx主进程号</span><br><span class="line">ps -ef | grep nginx</span><br><span class="line"></span><br><span class="line">// 从容停止Nginx</span><br><span class="line">kill -QUIT 主进程号</span><br><span class="line"></span><br><span class="line">// 快速停止Nginx</span><br><span class="line">kill -TERM 主进程号</span><br><span class="line"></span><br><span class="line">// 强制停止nginx</span><br><span class="line">pkill -9 nginx</span><br><span class="line"></span><br><span class="line">// 检查配置并启动</span><br><span class="line">sudo /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf</span><br><span class="line"></span><br><span class="line">// 连接mongodb</span><br><span class="line">./bin/mongod --dbpath=data/db --fork --logpath=log/mongodb.log</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://youyi.jingia.com/2018/02/05/mongoose-reference/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1353,149 +1489,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://youyi.jingia.com/2018/01/11/nodejs-mongodb-blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="老高">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="友谊同学">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/11/nodejs-mongodb-blog/" itemprop="url">nodejs和mongodb搭建博客（博客开发一）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-11T17:26:23+08:00">
-                2018-01-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="本文主要介绍服务端的相关开发，客户端使用vue开发web、react-native开发app、小程序等，本文不做客户端的开发介绍"><a href="#本文主要介绍服务端的相关开发，客户端使用vue开发web、react-native开发app、小程序等，本文不做客户端的开发介绍" class="headerlink" title="本文主要介绍服务端的相关开发，客户端使用vue开发web、react-native开发app、小程序等，本文不做客户端的开发介绍"></a>本文主要介绍服务端的相关开发，客户端使用vue开发web、react-native开发app、小程序等，本文不做客户端的开发介绍</h5><ul>
-<li><p>1.目录结构</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">app.js</span><br><span class="line">- models</span><br><span class="line">  - User.js</span><br><span class="line">- routers</span><br><span class="line">  - main.js</span><br><span class="line">  - api.js</span><br><span class="line">  - admin.js</span><br><span class="line">- schemas</span><br><span class="line">  - users.js</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2.app.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;)</span><br><span class="line">var bodyParser = require(&apos;body-parser&apos;)</span><br><span class="line">var mongoose = require(&apos;mongoose&apos;)</span><br><span class="line">var cookies = require(&apos;cookies&apos;)</span><br><span class="line"></span><br><span class="line">// 使用全局的Promise，需要高版本node支持Promise，也可使用bluebird</span><br><span class="line">mongoose.Promise = global.Promise</span><br><span class="line"></span><br><span class="line">var app = express()</span><br><span class="line"></span><br><span class="line">// post请求数据的处理，在req.body</span><br><span class="line">app.use(bodyParser.json())</span><br><span class="line">app.use(bodyParser.urlencoded(&#123; extended: false &#125;))</span><br><span class="line"></span><br><span class="line">// 设置和获取cookies</span><br><span class="line">app.use(function (req, res, next) &#123;</span><br><span class="line">  req.cookies = new cookies(req, res)</span><br><span class="line">  next()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 解决跨域</span><br><span class="line">app.all(&apos;*&apos;, function(req, res, next) &#123;</span><br><span class="line">  res.header(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);</span><br><span class="line">  res.header(&quot;Access-Control-Allow-Headers&quot;, &quot;Content-Type,Content-Length, Authorization, Accept,X-Requested-With&quot;);</span><br><span class="line">  res.header(&quot;Access-Control-Allow-Methods&quot;, &quot;PUT,POST,GET,DELETE,OPTIONS&quot;);</span><br><span class="line">  res.header(&quot;X-Powered-By&quot;, &apos; 3.2.1&apos;)</span><br><span class="line">  // if (req.method == &quot;OPTIONS&quot;) res.sendStatus(200); /*让options请求快速返回*/</span><br><span class="line">  else next();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 设置路由组</span><br><span class="line">app.use(&apos;/&apos;, require(&apos;./routers/main.js&apos;))</span><br><span class="line">app.use(&apos;/api&apos;, require(&apos;./routers/api.js&apos;))</span><br><span class="line">app.use(&apos;/admin&apos;, require(&apos;./routers/admin.js&apos;))</span><br><span class="line"></span><br><span class="line">// 连接数据库</span><br><span class="line">mongoose.connect(&apos;mongodb://localhost:27017/laogao&apos;, &#123;</span><br><span class="line">  useMongoClient: true</span><br><span class="line">&#125;, function(err) &#123;</span><br><span class="line">  if (err) &#123;</span><br><span class="line">    console.log(&apos;数据库连接失败&apos;)</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    console.log(&apos;数据库连接成功&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).catch(err =&gt; &#123;</span><br><span class="line">  console.log(err.message)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 监听端口，开启服务</span><br><span class="line">app.listen(3000, function(err) &#123;</span><br><span class="line">  if (err) &#123;</span><br><span class="line">    console.log(err)</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    console.log(&apos;listen on port 3000&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>3.admin.js，路由组内部写法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;)</span><br><span class="line"></span><br><span class="line">var router = express.Router()</span><br><span class="line"></span><br><span class="line">router.get(&apos;/user&apos;, function (req, res, next) &#123;</span><br><span class="line">  res.send(&apos;admin user&apos;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">module.exports = router</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.schema（数据表）的定义，users.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var mongoose = require(&apos;mongoose&apos;)</span><br><span class="line">var Schema = mongoose.Schema</span><br><span class="line"></span><br><span class="line">module.exports = new Schema(&#123;</span><br><span class="line">  username: String,</span><br><span class="line">  password: String</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>5.model的写法，User.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var mongoose = require(&apos;mongoose&apos;)</span><br><span class="line">var usersSchema = require(&apos;../schemas/users.js&apos;)</span><br><span class="line"></span><br><span class="line">module.exports = mongoose.model(&apos;User&apos;, usersSchema)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>6.api.js登录注册接口对数据库的相关操作，<a href="http://mongoosejs.com/docs/4.x/docs/api.html" target="_blank" rel="noopener">mongoose api地址</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;)</span><br><span class="line">var router = express.Router()</span><br><span class="line">var User = require(&apos;../models/User.js&apos;)</span><br><span class="line">var mongoose = require(&apos;mongoose&apos;)</span><br><span class="line">mongoose.Promise = global.Promise</span><br><span class="line"></span><br><span class="line">var responseData</span><br><span class="line"></span><br><span class="line">router.use(function (req, res, next) &#123;</span><br><span class="line">  responseData = &#123;</span><br><span class="line">    code: 0,</span><br><span class="line">    msg: &apos;&apos;</span><br><span class="line">  &#125;</span><br><span class="line">  next()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">router.post(&apos;/user/register&apos;, function (req, res, next) &#123;</span><br><span class="line">  var resBody = req.body</span><br><span class="line">  var username = resBody.username</span><br><span class="line">  var password = resBody.password</span><br><span class="line">  if (!resBody) &#123;</span><br><span class="line">    responseData.code = 9</span><br><span class="line">    responseData.msg = &apos;请求数据处理出错&apos;</span><br><span class="line">    res.json(responseData)</span><br><span class="line">    return</span><br><span class="line">  &#125;</span><br><span class="line">  if (username &amp;&amp; !username.trim()) &#123;</span><br><span class="line">    responseData.code = 1</span><br><span class="line">    responseData.msg = &apos;用户名不能为空&apos;</span><br><span class="line">    res.json(responseData)</span><br><span class="line">    return</span><br><span class="line">  &#125;</span><br><span class="line">  if (password &amp;&amp; !password.trim()) &#123;</span><br><span class="line">    responseData.code = 2</span><br><span class="line">    responseData.msg = &apos;密码不能为空&apos;</span><br><span class="line">    res.json(responseData)</span><br><span class="line">  &#125;</span><br><span class="line">  User.findOne(&#123;</span><br><span class="line">    username: username</span><br><span class="line">  &#125;).then(data =&gt; &#123;</span><br><span class="line">    if (data) &#123;</span><br><span class="line">      responseData.code = 3</span><br><span class="line">      responseData.msg = &apos;已有相同用户名&apos;</span><br><span class="line">      return Promise.resolve(responseData)</span><br><span class="line">    &#125; // 没有存在用户名</span><br><span class="line">    var user = new User(&#123;</span><br><span class="line">      username: username,</span><br><span class="line">      password: password</span><br><span class="line">    &#125;)</span><br><span class="line">    return user.save()</span><br><span class="line">  &#125;).then(data =&gt; &#123;</span><br><span class="line">    if (data.code === 3) &#123;</span><br><span class="line">      res.json(data)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      responseData.msg = &apos;注册成功&apos;</span><br><span class="line">      res.json(responseData)</span><br><span class="line">    &#125;</span><br><span class="line">    return</span><br><span class="line">  &#125;).catch(err =&gt; &#123;</span><br><span class="line">    responseData.code = 9</span><br><span class="line">    responseData.msg = &apos;数据库查找出错&apos;</span><br><span class="line">    res.json(responseData)</span><br><span class="line">    return</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">router.post(&apos;/user/login&apos;, function (req, res, next) &#123;</span><br><span class="line">  var resBody = req.body</span><br><span class="line">  var username = resBody.username</span><br><span class="line">  var password = resBody.password</span><br><span class="line">  if (!resBody || !username || !password) &#123;</span><br><span class="line">    responseData.code = 9</span><br><span class="line">    responseData.msg = &apos;请求数据出错&apos;</span><br><span class="line">    res.json(responseData)</span><br><span class="line">    return</span><br><span class="line">  &#125;</span><br><span class="line">  if (username &amp;&amp; !username.trim()) &#123;</span><br><span class="line">    responseData.code = 1</span><br><span class="line">    responseData.msg = &apos;用户名不能为空&apos;</span><br><span class="line">    res.json(responseData)</span><br><span class="line">    return</span><br><span class="line">  &#125;</span><br><span class="line">  if (password &amp;&amp; !password.trim()) &#123;</span><br><span class="line">    responseData.code = 2</span><br><span class="line">    responseData.msg = &apos;密码不能为空&apos;</span><br><span class="line">    res.json(responseData)</span><br><span class="line">  &#125;</span><br><span class="line">  User.findOne(&#123;</span><br><span class="line">    username: username</span><br><span class="line">  &#125;).then(data =&gt; &#123;</span><br><span class="line">    if (!data || data.password !== password) &#123;</span><br><span class="line">      responseData.code = 4</span><br><span class="line">      responseData.msg = &apos;用户名或密码错误&apos;</span><br><span class="line">      res.json(responseData)</span><br><span class="line">      return</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      responseData.msg = &apos;登录成功&apos;</span><br><span class="line">      responseData.user_info = &#123;</span><br><span class="line">        _id: data._id,</span><br><span class="line">        username: data.username</span><br><span class="line">      &#125;</span><br><span class="line">      console.log(req.cookies)</span><br><span class="line">      req.cookies.set(&apos;userInfo&apos;, JSON.stringify(responseData.user_info), &#123; httpOnly: false &#125;) // 此处默认为true，浏览器客户端无法获取。获取的时候服务端使用req.cookies.get(&apos;userInfo&apos;)，客户端使用了vue-cookie（参考文章博客开发三）</span><br><span class="line">      res.json(responseData)</span><br><span class="line">      return</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;).catch(err =&gt; &#123;</span><br><span class="line">    responseData.code = 9</span><br><span class="line">    responseData.msg = &apos;数据库查找出错&apos;</span><br><span class="line">    responseData.error = err</span><br><span class="line">    res.json(responseData)</span><br><span class="line">    return</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">module.exports = router</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1541,7 +1539,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1554,7 +1552,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

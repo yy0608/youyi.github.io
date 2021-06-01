@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://youyi.jingia.com/2021/05/31/design-patterns/</loc>
+    <lastmod>2021-06-01T02:42:19.098Z</lastmod>
+    <data>
+        <display>
+        <title>前端设计模式</title>
+        <pubTime>2021-05-31T12:35:06.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://youyi.jingia.com/2021/05/31/micro-frontend/</loc>
     <lastmod>2021-05-31T14:15:48.049Z</lastmod>
     <data>
@@ -264,14 +281,14 @@
 
     
   <url>
-    <loc>http://youyi.jingia.com/2018/02/27/qiniu-upload/</loc>
+    <loc>http://youyi.jingia.com/2018/01/06/node-project/</loc>
     <lastmod>2021-05-31T12:26:07.029Z</lastmod>
     <data>
         <display>
-        <title>七牛FormData上传和小程序上传</title>
-        <pubTime>2018-02-27T09:42:37.000Z</pubTime>
+        <title>node文件操作之自动化构建</title>
+        <pubTime>2018-01-06T08:17:27.000Z</pubTime>
         
-        <tag>七牛上传</tag>
+        <tag>自动化构建</tag>
          
          
            
@@ -281,14 +298,14 @@
 
     
   <url>
-    <loc>http://youyi.jingia.com/2018/01/06/node-project/</loc>
+    <loc>http://youyi.jingia.com/2018/02/27/qiniu-upload/</loc>
     <lastmod>2021-05-31T12:26:07.029Z</lastmod>
     <data>
         <display>
-        <title>node文件操作之自动化构建</title>
-        <pubTime>2018-01-06T08:17:27.000Z</pubTime>
+        <title>七牛FormData上传和小程序上传</title>
+        <pubTime>2018-02-27T09:42:37.000Z</pubTime>
         
-        <tag>自动化构建</tag>
+        <tag>七牛上传</tag>
          
          
            
@@ -315,14 +332,14 @@
 
     
   <url>
-    <loc>http://youyi.jingia.com/2018/07/14/ngrok-https/</loc>
+    <loc>http://youyi.jingia.com/2018/02/06/nginx-https/</loc>
     <lastmod>2021-05-31T12:26:07.028Z</lastmod>
     <data>
         <display>
-        <title>sunny-ngrok内网穿透实现https</title>
-        <pubTime>2018-07-14T05:38:01.000Z</pubTime>
+        <title>nginx配置多端口多域名，并配置https</title>
+        <pubTime>2018-02-06T10:12:57.000Z</pubTime>
         
-        <tag>ngrok</tag>
+        <tag>nginx配置</tag>
          
          
            
@@ -332,14 +349,14 @@
 
     
   <url>
-    <loc>http://youyi.jingia.com/2018/02/06/nginx-https/</loc>
+    <loc>http://youyi.jingia.com/2018/07/14/ngrok-https/</loc>
     <lastmod>2021-05-31T12:26:07.028Z</lastmod>
     <data>
         <display>
-        <title>nginx配置多端口多域名，并配置https</title>
-        <pubTime>2018-02-06T10:12:57.000Z</pubTime>
+        <title>sunny-ngrok内网穿透实现https</title>
+        <pubTime>2018-07-14T05:38:01.000Z</pubTime>
         
-        <tag>nginx配置</tag>
+        <tag>ngrok</tag>
          
          
            
@@ -417,14 +434,14 @@
 
     
   <url>
-    <loc>http://youyi.jingia.com/2017/12/30/markdown-write/</loc>
+    <loc>http://youyi.jingia.com/2018/03/02/img2base64/</loc>
     <lastmod>2021-05-31T12:26:07.023Z</lastmod>
     <data>
         <display>
-        <title>markdown常用基本写法</title>
-        <pubTime>2017-12-30T01:44:26.000Z</pubTime>
+        <title>将图片转化为base64并上传</title>
+        <pubTime>2018-03-02T07:27:11.000Z</pubTime>
         
-        <tag>markdown</tag>
+        <tag>base64</tag>
          
          
            
@@ -434,14 +451,14 @@
 
     
   <url>
-    <loc>http://youyi.jingia.com/2018/03/02/img2base64/</loc>
+    <loc>http://youyi.jingia.com/2017/12/30/markdown-write/</loc>
     <lastmod>2021-05-31T12:26:07.023Z</lastmod>
     <data>
         <display>
-        <title>将图片转化为base64并上传</title>
-        <pubTime>2018-03-02T07:27:11.000Z</pubTime>
+        <title>markdown常用基本写法</title>
+        <pubTime>2017-12-30T01:44:26.000Z</pubTime>
         
-        <tag>base64</tag>
+        <tag>markdown</tag>
          
          
            
@@ -642,14 +659,14 @@
 
     
   <url>
-    <loc>http://youyi.jingia.com/2018/02/03/blog-skills/</loc>
+    <loc>http://youyi.jingia.com/2018/03/09/captcha-verify/</loc>
     <lastmod>2021-05-31T12:26:07.019Z</lastmod>
     <data>
         <display>
-        <title>node和vue博客开发中的技巧经验小结（博客开发五）</title>
-        <pubTime>2018-02-03T06:38:46.000Z</pubTime>
+        <title>使用顶象进行滑动验证</title>
+        <pubTime>2018-03-09T10:06:39.000Z</pubTime>
         
-        <tag>node博客开发技巧</tag>
+        <tag>验证码校验</tag>
          
          
            
@@ -659,14 +676,14 @@
 
     
   <url>
-    <loc>http://youyi.jingia.com/2018/03/09/captcha-verify/</loc>
+    <loc>http://youyi.jingia.com/2018/02/03/blog-skills/</loc>
     <lastmod>2021-05-31T12:26:07.019Z</lastmod>
     <data>
         <display>
-        <title>使用顶象进行滑动验证</title>
-        <pubTime>2018-03-09T10:06:39.000Z</pubTime>
+        <title>node和vue博客开发中的技巧经验小结（博客开发五）</title>
+        <pubTime>2018-02-03T06:38:46.000Z</pubTime>
         
-        <tag>验证码校验</tag>
+        <tag>node博客开发技巧</tag>
          
          
            

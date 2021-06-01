@@ -232,6 +232,143 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://youyi.jingia.com/2018/05/03/guidelines/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="老高">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="友谊同学">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/guidelines/" itemprop="url">guidelines</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T12:03:56+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="前端代码规范"><a href="#前端代码规范" class="headerlink" title="前端代码规范"></a>前端代码规范</h1><h6 id="Front-End-Coding-Guidelines"><a href="#Front-End-Coding-Guidelines" class="headerlink" title="Front-End Coding Guidelines"></a>Front-End Coding Guidelines</h6><ul>
+<li>以下规范是团队基本约定的内容，必须严格遵循 <em>20180503</em></li>
+</ul>
+<h3 id="CSS规范"><a href="#CSS规范" class="headerlink" title="CSS规范"></a>CSS规范</h3><h5 id="一、顺序"><a href="#一、顺序" class="headerlink" title="一、顺序"></a>一、顺序</h5><h6 id="1-位置属性-position-top-right-z-index-display-float等"><a href="#1-位置属性-position-top-right-z-index-display-float等" class="headerlink" title="- 1.位置属性(position, top, right, z-index, display, float等)"></a>- 1.位置属性(position, top, right, z-index, display, float等)</h6><h6 id="2-大小-width-height-padding-margin"><a href="#2-大小-width-height-padding-margin" class="headerlink" title="- 2.大小(width, height, padding, margin)"></a>- 2.大小(width, height, padding, margin)</h6><h6 id="3-文字系列-font-line-height-letter-spacing-color-text-align等"><a href="#3-文字系列-font-line-height-letter-spacing-color-text-align等" class="headerlink" title="- 3.文字系列(font, line-height, letter-spacing, color- text-align等)"></a>- 3.文字系列(font, line-height, letter-spacing, color- text-align等)</h6><h6 id="4-背景-background-border等"><a href="#4-背景-background-border等" class="headerlink" title="- 4.背景(background, border等)"></a>- 4.背景(background, border等)</h6><h6 id="5-其他-animation-transition等"><a href="#5-其他-animation-transition等" class="headerlink" title="- 5.其他(animation, transition等)"></a>- 5.其他(animation, transition等)</h6><h5 id="二、命名"><a href="#二、命名" class="headerlink" title="二、命名"></a>二、命名</h5><h6 id="1-长名称或词组使用中横线，如果更长，使用中横线和下划线组合，下划线后为从属"><a href="#1-长名称或词组使用中横线，如果更长，使用中横线和下划线组合，下划线后为从属" class="headerlink" title="- 1.长名称或词组使用中横线，如果更长，使用中横线和下划线组合，下划线后为从属"></a>- 1.长名称或词组使用中横线，如果更长，使用中横线和下划线组合，下划线后为从属</h6><h6 id="2-能良好区分JavaScript变量命名（JS变量命名是用“-”）"><a href="#2-能良好区分JavaScript变量命名（JS变量命名是用“-”）" class="headerlink" title="- 2.能良好区分JavaScript变量命名（JS变量命名是用“_”）"></a>- 2.能良好区分JavaScript变量命名（JS变量命名是用“_”）</h6><h5 id="三、缩写"><a href="#三、缩写" class="headerlink" title="三、缩写"></a>三、缩写</h5><h6 id="1-缩写属性"><a href="#1-缩写属性" class="headerlink" title="- 1.缩写属性"></a>- 1.缩写属性</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.list-box &#123;</span><br><span class="line">  border-top: 0;</span><br><span class="line">  font: 100%/1.2 serif;</span><br><span class="line">  padding: 0 1em 2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="2-去掉小数点前的“0”"><a href="#2-去掉小数点前的“0”" class="headerlink" title="- 2.去掉小数点前的“0”"></a>- 2.去掉小数点前的“0”</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.list-item &#123;</span><br><span class="line">  font-size: .8em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="3-十六进制颜色代码缩写"><a href="#3-十六进制颜色代码缩写" class="headerlink" title="- 3.十六进制颜色代码缩写"></a>- 3.十六进制颜色代码缩写</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.list-item &#123;</span><br><span class="line">  color: #0ff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="HTML规范"><a href="#HTML规范" class="headerlink" title="HTML规范"></a>HTML规范</h3><h5 id="一、声明"><a href="#一、声明" class="headerlink" title="一、声明"></a>一、声明</h5><h6 id="1-必须加上-DOCTYPE-声明，并统一使用-HTML5-的文档声明"><a href="#1-必须加上-DOCTYPE-声明，并统一使用-HTML5-的文档声明" class="headerlink" title="- 1.必须加上 DOCTYPE 声明，并统一使用 HTML5 的文档声明"></a>- 1.必须加上 DOCTYPE 声明，并统一使用 HTML5 的文档声明</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="2-推荐使用属性值-cmn-Hans-CN（简体-中国大陆），但是考虑浏览器和操作系统的兼容性，目前仍然使用-zh-CN-属性值"><a href="#2-推荐使用属性值-cmn-Hans-CN（简体-中国大陆），但是考虑浏览器和操作系统的兼容性，目前仍然使用-zh-CN-属性值" class="headerlink" title="- 2.推荐使用属性值 cmn-Hans-CN（简体, 中国大陆），但是考虑浏览器和操作系统的兼容性，目前仍然使用 zh-CN 属性值"></a>- 2.推荐使用属性值 cmn-Hans-CN（简体, 中国大陆），但是考虑浏览器和操作系统的兼容性，目前仍然使用 zh-CN 属性值</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;html lang=&quot;zh-CN&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="3-一般情况下统一使用-“UTF-8”-编码"><a href="#3-一般情况下统一使用-“UTF-8”-编码" class="headerlink" title="- 3.一般情况下统一使用 “UTF-8” 编码"></a>- 3.一般情况下统一使用 “UTF-8” 编码</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="4-约定空元素标签都不加-“-”-字符"><a href="#4-约定空元素标签都不加-“-”-字符" class="headerlink" title="- 4.约定空元素标签都不加 “/” 字符"></a>- 4.约定空元素标签都不加 “/” 字符</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;br&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="5-元素属性使用双引号，属性值可以写上的都写上"><a href="#5-元素属性使用双引号，属性值可以写上的都写上" class="headerlink" title="- 5.元素属性使用双引号，属性值可以写上的都写上"></a>- 5.元素属性使用双引号，属性值可以写上的都写上</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot;&gt;</span><br><span class="line">  </span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;name&quot; checked=&quot;checked&quot; &gt;</span><br></pre></td></tr></table></figure>
+<h6 id="6-纯数字输入框，使用-type-”tel”-而不是-type-”number”"><a href="#6-纯数字输入框，使用-type-”tel”-而不是-type-”number”" class="headerlink" title="- 6.纯数字输入框，使用 type=”tel” 而不是 type=”number”"></a>- 6.纯数字输入框，使用 type=”tel” 而不是 type=”number”</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;tel&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="7-代码嵌套，每个块状元素独立一行，内联元素可选"><a href="#7-代码嵌套，每个块状元素独立一行，内联元素可选" class="headerlink" title="- 7.代码嵌套，每个块状元素独立一行，内联元素可选"></a>- 7.代码嵌套，每个块状元素独立一行，内联元素可选</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;h1&gt;&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;  </span><br><span class="line">&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="8-段落元素与标题元素只能嵌套内联元素"><a href="#8-段落元素与标题元素只能嵌套内联元素" class="headerlink" title="- 8.段落元素与标题元素只能嵌套内联元素"></a>- 8.段落元素与标题元素只能嵌套内联元素</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&lt;span&gt;&lt;/span&gt;&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="9-缩进建议使用2个空格，和eslint标准规范一样"><a href="#9-缩进建议使用2个空格，和eslint标准规范一样" class="headerlink" title="- 9.缩进建议使用2个空格，和eslint标准规范一样"></a>- 9.缩进建议使用2个空格，和eslint标准规范一样</h6><h6 id="10-移动端meta"><a href="#10-移动端meta" class="headerlink" title="- 10.移动端meta"></a>- 10.移动端meta</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no&quot; &gt;</span><br><span class="line">&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot; &gt;</span><br></pre></td></tr></table></figure>
+<h6 id="11-单位rem设置（放置到head标签，不要放到body）"><a href="#11-单位rem设置（放置到head标签，不要放到body）" class="headerlink" title="- 11.单位rem设置（放置到head标签，不要放到body）"></a>- 11.单位rem设置（放置到head标签，不要放到body）</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt; ! function(a) &#123;var j, b = a.document, c = b.documentElement, d = a.orientation || 0, e = 750, f = 9 / 16, g = 100, h = a.devicePixelRatio, i = 1; b.write(&apos;&lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=&apos; + i + &quot;,maximum-scale=&quot; + i + &quot;,minimum-scale=&quot; + i + &apos;,user-scalable=0&quot;&gt;&apos;), j = c.getBoundingClientRect().width, 90 == Math.abs(d) &amp;&amp; (j *= f), c.style.fontSize = j / h * g / (e / h) + &quot;px&quot;&#125;(window); &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="12-重置样式"><a href="#12-重置样式" class="headerlink" title="- 12.重置样式"></a>- 12.重置样式</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">/* 移动端 */</span><br><span class="line">/**</span><br><span class="line"> * Eric Meyer&apos;s Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)</span><br><span class="line"> * http://cssreset.com</span><br><span class="line"> */</span><br><span class="line">html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,menu,nav,output,ruby,section,summary,time,mark,audio,video,input&#123;margin:0;padding:0;border:0;font-size:100%;font-weight:normal;vertical-align:baseline;&#125;</span><br><span class="line">/* HTML5 display-role reset for older browsers */</span><br><span class="line">article,aside,details,figcaption,figure,footer,header,menu,nav,section&#123;display:block;&#125;</span><br><span class="line">body&#123;line-height:1;&#125;</span><br><span class="line">blockquote,q&#123;quotes:none;&#125;</span><br><span class="line">blockquote:before,blockquote:after,q:before,q:after&#123;content:none;&#125;</span><br><span class="line">table&#123;border-collapse:collapse;border-spacing:0;&#125;</span><br><span class="line"></span><br><span class="line">/* PC端 */</span><br><span class="line">html, body, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, ul, li, fieldset, form, label, input, legend, table, caption, tbody, tfoot, thead, tr, th, td, textarea, article, aside, audio, canvas, figure, footer, header, mark, menu, nav, section, time, video &#123; margin: 0; padding: 0; &#125;</span><br><span class="line">h1, h2, h3, h4, h5, h6 &#123; font-size: 100%; font-weight: normal &#125;</span><br><span class="line">article, aside, dialog, figure, footer, header, hgroup, nav, section, blockquote &#123; display: block; &#125;</span><br><span class="line">ul, ol &#123; list-style: none; &#125;</span><br><span class="line">img &#123; border: 0 none; vertical-align: top; &#125;</span><br><span class="line">blockquote, q &#123; quotes: none; &#125;</span><br><span class="line">blockquote:before, blockquote:after, q:before, q:after &#123; content: none; &#125;</span><br><span class="line">table &#123; border-collapse: collapse; border-spacing: 0; &#125;</span><br><span class="line">strong, em, i &#123; font-style: normal; font-weight: normal; &#125;</span><br><span class="line">ins &#123; text-decoration: underline; &#125;</span><br><span class="line">del &#123; text-decoration: line-through; &#125;</span><br><span class="line">mark &#123; background: none; &#125;</span><br><span class="line">input::-ms-clear &#123; display: none !important; &#125;</span><br><span class="line">body &#123; font: 12px/1.5 \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, &quot;Hiragino Sans GB&quot;, STHeiti, &quot;WenQuanYi Micro Hei&quot;, &quot;Droid Sans Fallback&quot;, SimSun, sans-serif; background: #fff; &#125;</span><br><span class="line">a &#123; text-decoration: none; color: #333; &#125;</span><br><span class="line">a:hover &#123; text-decoration: underline; &#125;</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://guide.aotu.io/index.html" target="_blank" rel="noopener">Front-End Coding Guidelines @2017 凹凸实验室</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://youyi.jingia.com/2018/03/17/mongoose-geo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1328,147 +1465,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://youyi.jingia.com/2018/02/06/nginx-https/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="老高">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="友谊同学">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/06/nginx-https/" itemprop="url">nginx配置多端口多域名，并配置https</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-06T18:12:57+08:00">
-                2018-02-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h6 id="一、本文介绍使用nginx多个域名配置一个服务器的多个端口，nginx安装自行搜索，本文通过yum安装，不是源码安装多域名配置，-ssl参考文章"><a href="#一、本文介绍使用nginx多个域名配置一个服务器的多个端口，nginx安装自行搜索，本文通过yum安装，不是源码安装多域名配置，-ssl参考文章" class="headerlink" title="一、本文介绍使用nginx多个域名配置一个服务器的多个端口，nginx安装自行搜索，本文通过yum安装，不是源码安装多域名配置， ssl参考文章"></a>一、本文介绍使用nginx多个域名配置一个服务器的多个端口，nginx安装自行搜索，本文通过yum安装，不是源码安装<a href="https://segmentfault.com/a/1190000004453295" target="_blank" rel="noopener">多域名配置</a>， <a href="https://www.jianshu.com/p/9523d888cf77" target="_blank" rel="noopener">ssl参考文章</a></h6><h6 id="二、启动目录和配置目录"><a href="#二、启动目录和配置目录" class="headerlink" title="二、启动目录和配置目录"></a>二、启动目录和配置目录</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 启动目录，which nginx查看位置，nginx启动，service nginx restart重启</span><br><span class="line">/usr/sbin/nginx</span><br><span class="line"></span><br><span class="line">// 主配置文件目录（默认）</span><br><span class="line">/etc/nginx/nginx.conf</span><br><span class="line">// 自己添加配置文件</span><br><span class="line">/root/nginx/jingia.com/*.conf</span><br></pre></td></tr></table></figure>
-<h6 id="三、主配置文件内容-其中包含了自己添加的配置文件-，nginx-conf"><a href="#三、主配置文件内容-其中包含了自己添加的配置文件-，nginx-conf" class="headerlink" title="三、主配置文件内容(其中包含了自己添加的配置文件)，nginx.conf"></a>三、主配置文件内容(其中包含了自己添加的配置文件)，nginx.conf</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    include       /root/nginx/jingia.com/*.conf;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  &apos;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &apos;</span><br><span class="line">    #                  &apos;$status $body_bytes_sent &quot;$http_referer&quot; &apos;</span><br><span class="line">    #                  &apos;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&apos;;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        #error_page  404              /404.html;</span><br><span class="line"></span><br><span class="line">        # redirect server error pages to the static page /50x.html</span><br><span class="line">        #</span><br><span class="line">        error_page   500 502 503 504  /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">            root   html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        # proxy the PHP scripts to Apache listening on 127.0.0.1:80</span><br><span class="line">        #</span><br></pre></td></tr></table></figure>
-<h6 id="四、自己添加的配置文件。注意http-server-和https-server-是写在一个server里的，分开写会有问题，下面的三个配置比较类似，后面两个没有配置https。（其中有使用到ssl证书，可以到腾讯云申请免费证书）"><a href="#四、自己添加的配置文件。注意http-server-和https-server-是写在一个server里的，分开写会有问题，下面的三个配置比较类似，后面两个没有配置https。（其中有使用到ssl证书，可以到腾讯云申请免费证书）" class="headerlink" title="四、自己添加的配置文件。注意http server 和https server 是写在一个server里的，分开写会有问题，下面的三个配置比较类似，后面两个没有配置https。（其中有使用到ssl证书，可以到腾讯云申请免费证书）"></a>四、自己添加的配置文件。注意http server 和https server 是写在一个server里的，分开写会有问题，下面的三个配置比较类似，后面两个没有配置https。（其中有使用到ssl证书，可以到腾讯云申请免费证书）</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">// www.conf</span><br><span class="line">upstream www.jingia.com &#123;</span><br><span class="line">    server 127.0.0.1:3000;</span><br><span class="line">    keepalive 8;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># the nginx server instance</span><br><span class="line">server &#123;</span><br><span class="line">    listen 0.0.0.0:80;</span><br><span class="line">    listen       443 ssl;</span><br><span class="line">    server_name www.jingia.com;</span><br><span class="line"></span><br><span class="line">    ssl_certificate      /root/ssl/1_www.jingia.com_bundle.crt;</span><br><span class="line">    ssl_certificate_key  /root/ssl/2_www.jingia.com.key;</span><br><span class="line"></span><br><span class="line">    ssl_session_cache    shared:SSL:1m;</span><br><span class="line">    ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">    ssl_ciphers  HIGH:!aNULL:!MD5;</span><br><span class="line">    ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">      proxy_set_header Host $http_host;</span><br><span class="line">      proxy_set_header X-NginX-Proxy true;</span><br><span class="line"></span><br><span class="line">      # value for proxy_pass has to match upstream name</span><br><span class="line">      proxy_pass http://www.jingia.com/;</span><br><span class="line">      proxy_redirect off;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// m.conf</span><br><span class="line">upstream m.jingia.com &#123;</span><br><span class="line">    server 127.0.0.1:3001;</span><br><span class="line">    keepalive 8;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># the nginx server instance</span><br><span class="line">server &#123;</span><br><span class="line">    listen 0.0.0.0:80;</span><br><span class="line">    server_name m.jingia.com;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">      proxy_set_header Host $http_host;</span><br><span class="line">      proxy_set_header X-NginX-Proxy true;</span><br><span class="line"></span><br><span class="line">      # value for proxy_pass has to match upstream name</span><br><span class="line">      proxy_pass http://m.jingia.com/;</span><br><span class="line">      proxy_redirect off;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// all.conf</span><br><span class="line">upstream jingia.com &#123;</span><br><span class="line">    server 127.0.0.1:3000;</span><br><span class="line">    keepalive 8;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># the nginx server instance</span><br><span class="line">server &#123;</span><br><span class="line">    listen 0.0.0.0:80;</span><br><span class="line">    server_name jingia.com;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">      proxy_set_header Host $http_host;</span><br><span class="line">      proxy_set_header X-NginX-Proxy true;</span><br><span class="line"></span><br><span class="line">      # value for proxy_pass has to match upstream name</span><br><span class="line">      proxy_pass http://jingia.com/;</span><br><span class="line">      proxy_redirect off;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h6 id="五、直接添加https配置，会报错，”ssl”-parameter-requires-ngx-http-ssl-module，参考文章"><a href="#五、直接添加https配置，会报错，”ssl”-parameter-requires-ngx-http-ssl-module，参考文章" class="headerlink" title="五、直接添加https配置，会报错，”ssl” parameter requires ngx_http_ssl_module，参考文章"></a>五、直接添加https配置，会报错，”ssl” parameter requires ngx_http_ssl_module，<a href="https://www.codelast.com/%E5%8E%9F%E5%88%9B-%E4%B8%BAnginx%E6%B7%BB%E5%8A%A0ssl%E6%94%AF%E6%8C%81%E6%A8%A1%E5%9D%97/" target="_blank" rel="noopener">参考文章</a></h6><ul>
-<li><p>1.查看旧的编译参数，（注意是大写的V，小写显示版本号）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/nginx/sbin/nginx -V</span><br><span class="line"></span><br><span class="line">// 得到--with-pcre=/root/lib/pcre-8.35 --with-zlib=/root/lib/zlib-1.2.11 --prefix=/usr/local/nginx</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2.进入到源码目录，（我的是/root/lib/nginx-1.12.2），加上上面的编译参数，新加需要的ssl模块，重新编译</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure --with-pcre=/root/lib/pcre-8.35 --with-zlib=/root/lib/zlib-1.2.11 --prefix=/usr/local/nginx --with-http_ssl_module</span><br><span class="line"></span><br><span class="line">make</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>3.使用的是make，（不是make install，不然会被覆盖）</p>
-</li>
-<li>4.备份以前的nginx，替换需要的部分<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/local/nginx/sbin/nginx ~/bak/</span><br><span class="line"></span><br><span class="line">cp objs/nginx /usr/local/nginx/sbin/</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h6 id="六、-configure-error-SSL-modules-require-the-OpenSSL-library，参考文章"><a href="#六、-configure-error-SSL-modules-require-the-OpenSSL-library，参考文章" class="headerlink" title="六、./configure: error: SSL modules require the OpenSSL library，参考文章"></a>六、./configure: error: SSL modules require the OpenSSL library，<a href="http://blog.csdn.net/testcs_dn/article/details/51461999" target="_blank" rel="noopener">参考文章</a></h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install openssl openssl-devel</span><br></pre></td></tr></table></figure>
-<h6 id="七、重启nginx命令，连接云主机上的mongodb数据库"><a href="#七、重启nginx命令，连接云主机上的mongodb数据库" class="headerlink" title="七、重启nginx命令，连接云主机上的mongodb数据库"></a>七、重启nginx命令，连接云主机上的mongodb数据库</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 查询nginx主进程号</span><br><span class="line">ps -ef | grep nginx</span><br><span class="line"></span><br><span class="line">// 从容停止Nginx</span><br><span class="line">kill -QUIT 主进程号</span><br><span class="line"></span><br><span class="line">// 快速停止Nginx</span><br><span class="line">kill -TERM 主进程号</span><br><span class="line"></span><br><span class="line">// 强制停止nginx</span><br><span class="line">pkill -9 nginx</span><br><span class="line"></span><br><span class="line">// 检查配置并启动</span><br><span class="line">sudo /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf</span><br><span class="line"></span><br><span class="line">// 连接mongodb</span><br><span class="line">./bin/mongod --dbpath=data/db --fork --logpath=log/mongodb.log</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1514,7 +1515,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1527,7 +1528,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

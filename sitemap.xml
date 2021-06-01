@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://youyi.jingia.com/2021/05/31/design-patterns/</loc>
+    
+    <lastmod>2021-06-01T02:42:19.098Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://youyi.jingia.com/2021/05/31/micro-frontend/</loc>
     
     <lastmod>2021-05-31T14:15:48.049Z</lastmod>
@@ -128,14 +135,14 @@
   </url>
   
   <url>
-    <loc>http://youyi.jingia.com/2018/02/27/qiniu-upload/</loc>
+    <loc>http://youyi.jingia.com/2018/01/06/node-project/</loc>
     
     <lastmod>2021-05-31T12:26:07.029Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://youyi.jingia.com/2018/01/06/node-project/</loc>
+    <loc>http://youyi.jingia.com/2018/02/27/qiniu-upload/</loc>
     
     <lastmod>2021-05-31T12:26:07.029Z</lastmod>
     
@@ -149,14 +156,14 @@
   </url>
   
   <url>
-    <loc>http://youyi.jingia.com/2018/07/14/ngrok-https/</loc>
+    <loc>http://youyi.jingia.com/2018/02/06/nginx-https/</loc>
     
     <lastmod>2021-05-31T12:26:07.028Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://youyi.jingia.com/2018/02/06/nginx-https/</loc>
+    <loc>http://youyi.jingia.com/2018/07/14/ngrok-https/</loc>
     
     <lastmod>2021-05-31T12:26:07.028Z</lastmod>
     
@@ -191,14 +198,14 @@
   </url>
   
   <url>
-    <loc>http://youyi.jingia.com/2017/12/30/markdown-write/</loc>
+    <loc>http://youyi.jingia.com/2018/03/02/img2base64/</loc>
     
     <lastmod>2021-05-31T12:26:07.023Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://youyi.jingia.com/2018/03/02/img2base64/</loc>
+    <loc>http://youyi.jingia.com/2017/12/30/markdown-write/</loc>
     
     <lastmod>2021-05-31T12:26:07.023Z</lastmod>
     
@@ -282,14 +289,14 @@
   </url>
   
   <url>
-    <loc>http://youyi.jingia.com/2018/02/03/blog-skills/</loc>
+    <loc>http://youyi.jingia.com/2018/03/09/captcha-verify/</loc>
     
     <lastmod>2021-05-31T12:26:07.019Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://youyi.jingia.com/2018/03/09/captcha-verify/</loc>
+    <loc>http://youyi.jingia.com/2018/02/03/blog-skills/</loc>
     
     <lastmod>2021-05-31T12:26:07.019Z</lastmod>
     
